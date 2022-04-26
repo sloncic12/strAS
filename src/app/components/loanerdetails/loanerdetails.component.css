@@ -1,0 +1,65 @@
+.vertical-menu {
+  /* Set a width if you like */
+ height: fit-content;
+
+ margin-top: 3%;
+ max-width: 220px !important;
+ margin-bottom: 1%;
+}
+
+/* .container{
+  margin-top: 2%;
+  width: 100%;
+  margin-left: 0% !important;
+} */
+.vertical-menu a {
+  background-color:#bb5098; 
+  color: white; 
+  font-size: 11pt;
+  display: block;
+  border-top:1px solid orange;
+  padding: 12px; 
+  text-decoration: none; 
+}
+
+.vertical-menu a:hover {
+  background-color: rgb(16, 41, 42); 
+}
+
+.vertical-menu a.active {
+  background-color: #16aadf; /* Add a green color to the "active/current" link */
+  color: rgb(56, 148, 151) !important;
+}
+span{
+  margin-right: 2%;
+  margin-left: 2%;
+  margin-bottom: 3%;
+}
+
+
+h3{
+  
+  font-weight: bolder;
+}
+.img{
+  margin-left: 30%;
+}
+
+.cedulja{
+  font-weight: bolder;
+  border-radius: 15%;
+  padding: 7%;
+}
+
+.ceduljaimage{
+  
+  font-weight: bolder;
+}
+
+#header{
+  color:white;
+  text-align: center;
+}
+.debt{
+  font-size: 13pt;
+}

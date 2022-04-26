@@ -1,0 +1,60 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!-- 
+<nav  class=" navbar-expand-sm  nav-dark"  >
+   
+    <div class="collapse navbar-collapse w-100 nav-addition" id="navbarNavDropdown">
+      <ul class="navbar-nav ">
+    <li class="nav-item active">
+    <a class="nav-link" (click)="isMenuCollapsed = true" routerLink='nov'> Nov unos</a>
+    </li>
+    <li class="nav-item">
+    <a class="nav-link" [routerLinkActive]="['active']" (click)="isMenuCollapsed = true" routerLink="vracen">Vracen hleb</a>
+    </li>
+
+    </ul>
+  </div>
+    </nav>  -->
+
+<div class="container-fluid" >
+
+  <button (click)="openReturnedBread()"   class="btn btn-dark">Vracen hleb</button> 
+  <button  (click)="openNewBread()" class="btn btn-success">Nov hleb</button> 
+ <br>
+ <br>
+ <br>
+ <div  *ngIf='bread.length==0'>
+  <h1>Nema vracenog hleba!</h1>
+  </div>
+  <table  class="table  table-sm" *ngIf='bread.length!=0' >
+       <thead class="thead-light">
+
+<th scope="col">Datum</th>
+<th scope="col">Distributer</th>
+<th scope="col">Tip</th>
+<th scope="col">Kolicina</th>
+        </thead>
+        <tbody>
+      <tr  *ngFor='let student of bread; index as i' >
+     
+        <td>
+            {{getDate(student.datum) | date:'dd/MM/yyyy'}}
+         </td>
+         <td>
+        
+            {{student.distributor}}
+           </td>
+           <td>        
+            {{student.type}}
+           </td>
+           <td>   
+            {{student.kolicina}}
+           </td>
+         <td  id="bla">
+          <div  (click)="returnBread(student)"     class='fa fa-exchange rozetekst' aria-hidden='true'></div>
+        </td>
+         </tr>
+ </tbody>
+    </table>
+
+</div>
+  

@@ -1,0 +1,12 @@
+<h1 mat-dialog-title>{{data.name}} </h1>
+<div mat-dialog-content>
+  <p>Unesite novu cenu</p>
+  <mat-form-field appearance="fill">
+    <input type="number" matInput [(ngModel)]="data.newPrice">
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button  class="btn btn-success" [mat-dialog-close]="data.newPrice" >Ok</button>
+  
+  <button mat-button  class="btn btn-danger" (click)="onNoClick()">Odustani</button>
+</div>

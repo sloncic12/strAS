@@ -1,0 +1,33 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+<div class="container" *ngIf='pastries.length!=0'>
+  <br>
+  
+  <table  class="table table-striped " >
+       <thead>
+  <th style="padding: 8px;" scope="col">#</th>
+<th style="padding: 8px;" scope="col">Ime</th>
+<th style="padding: 8px;" scope="col">Cena</th>
+<th style="padding: 8px;" scope="col"></th>
+        </thead>
+        <tbody>
+      <tr  *ngFor='let student of pastries; index as i' >
+        <th scope="row">{{ i + 1 }}</th>
+        <td>
+          {{student.name}}
+         </td>
+         <td>
+            {{student.cena}}
+           </td>
+         
+         <td class="text-end" id="bla">
+          <div  (click)="changePastry(student)"     class='fa fa-edit rozetekst' aria-hidden='true'></div>
+        </td>
+      
+         </tr>
+ </tbody>
+    </table>
+
+</div>
+  

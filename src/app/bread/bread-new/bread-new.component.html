@@ -1,0 +1,48 @@
+
+<div class="container-fluid "  >
+   <div class="box">
+     <h3>Unesite nov hleb</h3>
+    <form #myForm="ngForm" (ngSubmit)="submitCompany(myForm.form);">
+        <p >
+        <mat-form-field  appearance="outline">
+            <mat-label>Distributer</mat-label>
+            <mat-select [(ngModel)]="selectedDistributor" name="selectedDistributor" (selectionChange)="onChange()" >
+              <mat-option *ngFor="let distributor of distributors" [value]="distributor.name">
+                {{distributor.name}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field >
+</p>
+
+<p >
+          <mat-form-field  appearance="outline">
+            <mat-label>Tip peciva</mat-label>
+            <mat-select  [(ngModel)]="selectedPastry" name="food">
+              <mat-option *ngFor="let pastry of pastries" [value]="pastry.name">
+                {{pastry.name}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+</p>
+      <p >Kolicina
+        <mat-form-field class="w-100" appearance="outline">
+      <input matInput type="number"  required class="h-100" name="iznos"  ngModel
+      #iznos="ngModel"
+      >
+    </mat-form-field>
+    </p>
+      
+    
+      <p >Datum
+      <mat-form-field class="w-100" appearance="outline" >
+        <input matInput required [matDatepicker]="picker" (dateChange)="dateChanged($event)" >
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+    </p>    
+      <br>
+          
+       <button class="btn " [disabled]="!myForm.valid">Dodaj</button>
+    </form>
+  </div>
+    </div>

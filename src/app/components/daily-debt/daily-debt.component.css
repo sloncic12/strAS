@@ -1,0 +1,49 @@
+
+.container-fluid{
+
+    padding-bottom: 15%;
+}
+
+.h3{
+   text-align: center !important;
+   margin-bottom: 3%;
+}
+.formBox{
+    margin-top: 5%;   
+    border-collapse: collapse;
+    padding: 2%;
+    margin-left: 1%;
+    font-size: 1em;
+    opacity: 0.9;
+    text-align: center;
+    background-color: white;
+    font-family: sans-serif;
+    justify-content: center;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  
+   }
+   .result{
+    margin-top: 2%;   
+    border-collapse: collapse;
+    padding: 1%;
+
+    font-size: 1.5em;
+    opacity: 0.9;
+    text-align: center;
+    background-color: white;
+    font-family: sans-serif;
+    justify-content: center;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  
+   }
+.radiogroup{
+    text-align: start !important;
+    float: left;
+}
+::ng-deep .mat-form-field-flex > .mat-form-field-infix { padding: 0.5em 0px !important;}
+
+::ng-deep .mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label {
+    transform: translateY(-1.0em) scale(.65);
+    width: 133.33333%;
+}
+

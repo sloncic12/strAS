@@ -1,0 +1,49 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!-- 
+<nav  class=" navbar-expand-sm  nav-dark"  >
+   
+    <div class="collapse navbar-collapse w-100 nav-addition" id="navbarNavDropdown">
+      <ul class="navbar-nav ">
+    <li class="nav-item active">
+    <a class="nav-link" (click)="isMenuCollapsed = true" routerLink='nov'> Nov unos</a>
+    </li>
+    <li class="nav-item">
+    <a class="nav-link" [routerLinkActive]="['active']" (click)="isMenuCollapsed = true" routerLink="vracen">Vracen hleb</a>
+    </li>
+
+    </ul>
+  </div>
+    </nav>  -->
+
+<div class="container-fluid" >
+
+ <br>
+ <br>
+ 
+ <button  (click)="savePDF()" class="btn btn-success">Skini PDF</button> 
+ <br>
+  <table  class="table "  id="content" #content *ngIf='products.length!=0' >
+       <thead class="thead-light">
+
+<th scope="col">Proizvod</th>
+<th scope="col">Cena</th>
+        </thead>
+        <tbody>
+      <tr  *ngFor='let student of products; index as i' >
+     
+    
+         <td>
+        
+            {{student.name}}
+           </td>
+           <td>   
+            <b>{{student.cena}}</b>
+           </td>
+          
+     
+         </tr>
+ </tbody>
+    </table>
+
+</div>
+  

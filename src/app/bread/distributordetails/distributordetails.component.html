@@ -1,0 +1,42 @@
+
+<br>
+
+<div class="container-fluid ">
+        
+   <button  *ngIf='selected==0' class="btn btn-warning" (click)="setSelected(3)">Izmeni stanje</button> 
+   
+   <button  *ngIf='selected==1' class="btn btn-warning" (click)="setSelected(4)">Dodaj pecivo</button> 
+   <div class="row w-100 justify-content-center"> 
+   <div class="vertical-menu col-md-3  rozepozadina">
+     <br>
+    <img class=" img "  align="center" src="../../../assets/baker.png" alt="Card image" style="width:45%">
+    <br>
+  <h3>{{distributor.name}}</h3>
+
+ <div class="cedulja zutapozadina ljubicastitekst ">
+   <div class="ceduljaimage"> 
+   <img   align="center" src="../../../assets/flour.png" alt="Card image" style="width:20%">
+   {{distributor.cedulja | number :'.0-2'}}
+    <br>
+  </div>
+   <img   align="center" src="../../../assets/pare.png" alt="Card image" style="width:20%">
+    {{distributor.cena | number :'.0-2'}}
+ </div>
+
+ <br>
+  <a routerLinkActive="active"  (click)="setSelected(0)"> Pregled zaduzenja</a>
+  <a  (click)="setSelected(1)">Pregled peciva</a>
+  <a  (click)="setSelected(2)">Pregled uzetog hleba</a>
+  </div>
+ <div class="component col-md-9 " >
+ 
+   <app-distributordebts  *ngIf='selected==0' ></app-distributordebts>
+   <app-distributorpastries  *ngIf='selected==1' ></app-distributorpastries>
+  <app-distributorbreadreview *ngIf='selected==2' ></app-distributorbreadreview>
+  <app-new-flour-debt *ngIf='selected==3' ></app-new-flour-debt>
+  <app-new-pastry (someEvent)="setSelected($event)" *ngIf='selected==4'></app-new-pastry>
+</div>
+</div>
+</div>
+
+      

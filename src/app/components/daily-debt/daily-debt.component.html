@@ -1,0 +1,51 @@
+
+<div class="container-fluid">
+  
+  <div class="row w-100  justify-content-center"> 
+    <div class="formBox col-sm-5 ">
+    <h3>Pregled po datumima</h3>
+<br>
+<form #myForm="ngForm" class=" w-100" (ngSubmit)="submitCompany(myForm.form);">
+
+  <mat-radio-group class="radiogroup"  name="selectedRadio" [(ngModel)]="selectedRadio" aria-label="Select an option">
+    <mat-radio-button  value="1">Dnevni pregled</mat-radio-button>
+    &nbsp;
+    <mat-radio-button value="2">Mesecni pregled</mat-radio-button>
+  </mat-radio-group>
+<br>
+
+<br>
+  <p>Datum
+    <mat-form-field class="w-100" appearance="outline" >
+      <input matInput  [matDatepicker]="picker" (dateChange)="dateChangedOne($event)" >
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+  </p>  
+
+
+  <p  *ngIf= 'selectedRadio=="2"'>Datum do
+    <mat-form-field class="w-100" appearance="outline" >
+      <input matInput  [matDatepicker]="picker" (dateChange)="dateChangedTwo($event)" >
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+  </p>  
+
+  <button class="btn btn-warning" [disabled]="!myForm.valid">Pogledaj</button>
+</form>
+</div>
+  <div class="component col-md-8 " *ngIf="sumUzeto>0 || sumVraceno>0">
+     
+    <div class="result "> 
+  <b>  Uzeto {{sumUzeto}}</b>
+  <br>
+  <b> Vraceno {{sumVraceno}} </b>
+  <br>
+  <b> Razlika {{sumVraceno-sumUzeto}} </b>
+  <br>
+
+</div> 
+</div>
+</div>
+</div>

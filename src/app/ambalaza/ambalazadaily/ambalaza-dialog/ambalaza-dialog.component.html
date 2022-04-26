@@ -1,0 +1,101 @@
+<div class="container-fluid">
+  
+    <div class="row w-100  justify-content-center"> 
+      <div class="formBox col-sm-3">
+        <h4>Pregled po datumima</h4>
+    
+    <form #myForm="ngForm" (ngSubmit)="submitCompany(myForm.form);">
+    
+    
+    <br>
+      <p>Datum od
+        <mat-form-field class="w-100" appearance="outline" >
+          <input matInput  [matDatepicker]="picker" (dateChange)="dateChangedOne($event)" >
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+      </p>  
+    
+    
+      <p  >Datum do
+        <mat-form-field class="w-100" appearance="outline" >
+          <input matInput  [matDatepicker]="picker2" (dateChange)="dateChangedTwo($event)" >
+          <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+          <mat-datepicker #picker2></mat-datepicker>
+        </mat-form-field>
+      </p>  
+    
+      <button class="btn btn-warning "  [disabled]="!myForm.valid">Pogledaj</button>
+      
+      
+    
+    </form>
+     </div>
+  
+ <div class="component col-md-8 " *ngIf="ambalaza.length>0 || ambalazavraceno.length>0">
+     
+   <div class="formBox"> 
+    <h3 *ngIf="ambalaza.length>0">Uzeto</h3>
+    <table class="table table-striped table-sm" *ngIf="ambalaza.length>0"  >
+      <thead>
+  <th>Tip</th>
+  <th>Flase</th>
+  <th>Gajba</th>
+       </thead>
+     <tbody>
+     <tr  *ngFor='let student of ambalaza'>
+        <td>
+       
+         {{student.tip}}
+        </td>
+      
+        
+        <td>
+       
+           {{student.flase}}
+          </td>
+          <td>
+  
+           {{student.gajba}}
+          </td>
+     
+        </tr>
+     </tbody>
+   </table>
+  
+  
+   <br>
+   <br>
+       
+   <h3 *ngIf="ambalazavraceno.length>0">Vraceno</h3>
+   <table class="table table-striped table-sm" *ngIf="ambalazavraceno.length>0" >
+     <thead>
+  <th>Tip</th>
+  <th>Flase</th>
+  <th>Gajba</th>
+      </thead>
+    <tbody>
+    <tr  *ngFor='let student of ambalazavraceno'>
+       <td>
+      
+        {{student.tip}}
+       </td>
+     
+       
+       <td>
+      
+          {{student.flase}}
+         </td>
+         <td>
+  
+          {{student.gajba}}
+         </td>
+    
+       </tr>
+    </tbody>
+  </table>
+    </div>  
+    </div>
+    </div>
+    
+   </div>

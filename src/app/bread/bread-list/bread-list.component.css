@@ -1,0 +1,38 @@
+
+
+
+#bla{
+    text-align:end ;
+}
+
+.navbar-expand-sm{
+    background-color: rgba(231, 180, 236, 0.842) !important;
+  
+}
+.table{
+    border-collapse: collapse;
+     width: 80%; 
+     background-color: white;
+    margin-left: 10%;
+    font-size: 1em;
+    font-family: sans-serif;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+   }
+td{
+    
+    padding: 2% !important;
+      /* border-right: 2px solid #103758 !important; */
+}
+th{
+    padding: 2% !important;
+}
+.container-fluid{
+    background-size: cover;
+   padding-top: 5%;
+   padding-bottom: 20%;
+}
+ 
+.btn{
+    float: right;
+  margin-right: 1%;
+    }
