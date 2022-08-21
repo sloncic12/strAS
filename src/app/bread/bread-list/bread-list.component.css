@@ -20,11 +20,11 @@
    }
 td{
     
-    padding: 2% !important;
+    padding: 1% !important;
       /* border-right: 2px solid #103758 !important; */
 }
 th{
-    padding: 2% !important;
+    padding: 1% !important;
 }
 .container-fluid{
     background-size: cover;
@@ -36,3 +36,30 @@ th{
     float: right;
   margin-right: 1%;
     }
+
+    
+@media screen and (max-width: 600px) { 
+    #bla{
+        text-align:start ;
+    }
+    .table{
+        margin-top: 5%;   
+        border-collapse: collapse;
+         width: 95%; 
+        margin-left: 2.5%;
+        font-size: 0.5em;
+        font-family: sans-serif;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+       }
+       td:last-of-type{
+        padding: 0% !important;
+          /* border-right: 2px solid #103758 !important; */
+    }
+    td:first-of-type{
+        padding: 0% !important;
+          /* border-right: 2px solid #103758 !important; */
+    }
+    th{
+        padding: 1% !important;
+    }
+}

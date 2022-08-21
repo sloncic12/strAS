@@ -50,6 +50,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AmbalazaByBeerComponent } from './ambalaza/ambalazadaily/ambalaza-by-beer/ambalaza-by-beer.component';
 import { ProductsComponent } from './products/products.component';
 import { DialogDeleteUserComponent } from './components/loanerdetails/dialog-delete-user/dialog-delete-user.component';
+import { NewProductComponent } from './products/new-product/new-product.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -83,7 +84,8 @@ import { DialogDeleteUserComponent } from './components/loanerdetails/dialog-del
     NewUserDialogComponent,
     AmbalazaByBeerComponent,
     ProductsComponent,
-    DialogDeleteUserComponent
+    DialogDeleteUserComponent,
+    NewProductComponent
 
   ],
   imports: [

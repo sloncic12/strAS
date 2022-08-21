@@ -20,4 +20,38 @@ export class ProductService {
    
     }
   }
+
+  add(product: Product): any {
+    
+    var store=localStorage.getItem("chosenStore");
+    if (store=="Pricinovic"){
+    
+      var someRef=this.db.database.ref().child('mp_product').push();
+      var newId=someRef.key;
+      product.id=newId;
+    return someRef.set(product);
+    }else{
+      var someRef=this.db.database.ref().child('glu_product').push();
+    
+      var newId=someRef.key;
+      product.id=newId;
+      return someRef.set(product);
+    }
+  }
+  
+
+delete(productID:string): Promise<void> {
+  var store=localStorage.getItem("chosenStore");
+  
+  if (store=="Pricinovic"){
+    var newRef=this.db.database.ref().child("mp_product").child(productID);
+    return newRef.remove();
+  }else{
+    var newRef=this.db.database.ref().child("glu_product").child(productID);
+    return newRef.remove();
+  
+}
+  
+
+}
 }

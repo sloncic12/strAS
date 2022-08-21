@@ -20,13 +20,15 @@
  <br>
  <br>
  
- <button  (click)="savePDF()" class="btn btn-success">Skini PDF</button> 
+ <button (click)="addProduct()"   class="btn btn-success"><i class="fa fa-plus" ></i>  Dodaj proizvod</button> 
+ <button  (click)="savePDF()" class="btn btn-success"><i class="fa fa-file" ></i>  Skini PDF</button> 
  <br>
   <table  class="table "  id="content" #content *ngIf='products.length!=0' >
        <thead class="thead-light">
 
 <th scope="col">Proizvod</th>
 <th scope="col">Cena</th>
+<th scope="col">&nbsp;</th>
         </thead>
         <tbody>
       <tr  *ngFor='let student of products; index as i' >
@@ -46,6 +48,5 @@
          </tr>
  </tbody>
     </table>
-
 </div>
   
