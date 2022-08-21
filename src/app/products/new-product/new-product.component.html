@@ -1,35 +1,34 @@
-
 <div mat-dialog-content>
-    <p>Naziv
+  <p>Naziv
     <mat-form-field appearance="fill">
-      <input type="text"  placeholder="Naziv proizvoda" matInput [(ngModel)]="data.name">
+      <input type="text" placeholder="Naziv proizvoda" matInput [(ngModel)]="data.name">
     </mat-form-field>
-    </p>
-    <p>Cena 
+  </p>
+  <p>Cena
     <mat-form-field appearance="fill">
-        <input type="number" placeholder="Cena" matInput [(ngModel)]="data.price">
-      </mat-form-field>
-      </p>
-      <p>
-        <mat-form-field  appearance="outline">
-          <mat-label>Kategorija</mat-label>
-          <mat-select  [(ngModel)]="data.category" name="category">
-            <mat-option *ngFor="let category of categories" [value]="category">
-              {{category}}
-            </mat-option>
-          </mat-select>
-        </mat-form-field>
+      <input type="number" placeholder="Cena" matInput [(ngModel)]="data.price">
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field appearance="outline">
+      <mat-label>Kategorija</mat-label>
+      <mat-select [(ngModel)]="data.category" name="category">
+        <mat-option *ngFor="let category of categories" [value]="category">
+          {{category}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
 
-        <mat-form-field  appearance="outline">
-            <mat-select  [(ngModel)]="data.quantity" name="quantity">
-              <mat-option *ngFor="let q of quantity" [value]="q">
-                {{q}}
-              </mat-option>
-            </mat-select>
-          </mat-form-field>
-</p>
-  </div>
-  <div mat-dialog-actions>
-    <button mat-button class="btn btn-success" [mat-dialog-close]="data" >Ok</button>
-    <button mat-button class="btn btn-danger" (click)="onNoClick()">Odustani</button>
-  </div>
+    <mat-form-field appearance="outline">
+      <mat-select [(ngModel)]="data.quantity" name="quantity">
+        <mat-option *ngFor="let q of quantity" [value]="q">
+          {{q}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </p>
+</div>
+<div mat-dialog-actions>
+  <button mat-button class="btn btn-success" [mat-dialog-close]="data">Ok</button>
+  <button mat-button class="btn btn-danger" (click)="onNoClick()">Odustani</button>
+</div>

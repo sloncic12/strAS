@@ -11,7 +11,7 @@ export class DialogPriceChangeComponent implements OnInit {
   constructor(
     public dialogRef: MatDialogRef<DialogPriceChangeComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any,
-  ) {}
+  ) { }
 
   onNoClick(): void {
     this.dialogRef.close();

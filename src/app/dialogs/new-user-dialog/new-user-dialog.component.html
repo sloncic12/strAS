@@ -1,12 +1,11 @@
-
 <div mat-dialog-content>
-    <p>Unesite ime novog duznika</p>
-    <mat-form-field appearance="fill">
-      <input  matInput [(ngModel)]="data.toReturn">
-    </mat-form-field>
-  </div>
-  <div mat-dialog-actions>
-    <button mat-button  class="btn btn-success" [mat-dialog-close]="data.toReturn" >Ok</button>
-    
-    <button mat-button  class="btn btn-danger" (click)="onNoClick()">Odustani</button>
-  </div>
+  <p>Unesite ime novog duznika</p>
+  <mat-form-field appearance="fill">
+    <input matInput [(ngModel)]="data.toReturn">
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button class="btn btn-success" [mat-dialog-close]="data.toReturn">Ok</button>
+
+  <button mat-button class="btn btn-danger" (click)="onNoClick()">Odustani</button>
+</div>

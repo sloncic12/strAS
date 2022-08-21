@@ -11,19 +11,19 @@ import { NewPastryComponent } from './distributorpastries/new-pastry/new-pastry.
   styleUrls: ['./distributordetails.component.css']
 })
 export class DistributordetailsComponent implements OnInit {
-  selected:number;
+  selected: number;
 
-  @ViewChild(NewPastryComponent) child:NewPastryComponent;
-  setSelected(n:any){
-    this.selected=n;
-    localStorage.setItem("selected",n);
+  @ViewChild(NewPastryComponent) child: NewPastryComponent;
+  setSelected(n: any) {
+    this.selected = n;
+    localStorage.setItem("selected", n);
   }
-  constructor(private pastryService:PastryService) { }
+  constructor(private pastryService: PastryService) { }
   distributor: Distributor;
   ngOnInit(): void {
-    this.selected=0;
-    this.distributor= JSON.parse( localStorage.getItem("chosenDistributor") || '{}');
-    
+    this.selected = 0;
+    this.distributor = JSON.parse(localStorage.getItem("chosenDistributor") || '{}');
+
   }
 
 

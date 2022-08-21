@@ -8,9 +8,9 @@ describe('AmbalazaReturnComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AmbalazaReturnComponent ]
+      declarations: [AmbalazaReturnComponent]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

@@ -1,32 +1,33 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 
- <br>
-  <div class="container" *ngIf='debts.length!=0'>
-     <table class="table table-striped" >
-        <thead>
- <th>Iznos</th>
- <th>Datum</th>
- <th>Opis</th>
-         </thead>
-         <tbody>
-       <tr  *ngFor='let student of debts' >
-          <td>
-       <span *ngIf="student.opis=='vracen'" [ngStyle]="{'color': 'lightgreen'}"> +{{student.value}}</span> 
-       <span *ngIf='student.opis!="vracen"' [ngStyle]="{'color': 'rgb(235, 82, 82)'}">  -{{student.value}}</span> 
-          </td>
-          <td>
-         
-             {{getDate(student.date) | date:'dd/MM/yyyy'}}
+<br>
+<div class="container" *ngIf='debts.length!=0'>
+   <table class="table table-striped">
+      <thead>
+         <th>Iznos</th>
+         <th>Datum</th>
+         <th>Opis</th>
+      </thead>
+      <tbody>
+         <tr *ngFor='let student of debts'>
+            <td>
+               <span *ngIf="student.opis=='vracen'" [ngStyle]="{'color': 'lightgreen'}"> +{{student.value}}</span>
+               <span *ngIf='student.opis!="vracen"' [ngStyle]="{'color': 'rgb(235, 82, 82)'}"> -{{student.value}}</span>
             </td>
             <td>
-           <span  *ngIf='student.opis!="vracen"'> {{student.opis}} </span>  
+
+               {{getDate(student.date) | date:'dd/MM/yyyy'}}
             </td>
-          
-            <td  id="bla" >
-               <div  *ngIf="student.image!=''" (click)="openImage(student.image!)"  class='fa fa-info-circle rozetekst' aria-hidden='true'></div>
-             </td>
-          </tr>
-         </tbody>
-     </table>
- </div>
+            <td>
+               <span *ngIf='student.opis!="vracen"'> {{student.opis}} </span>
+            </td>
+
+            <td id="bla">
+               <div *ngIf="student.image!=''" (click)="openImage(student.image!)" class='fa fa-info-circle rozetekst'
+                  aria-hidden='true'></div>
+            </td>
+         </tr>
+      </tbody>
+   </table>
+</div>

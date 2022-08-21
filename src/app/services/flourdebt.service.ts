@@ -8,29 +8,29 @@ import FlourDebt from '../models/flourdebt.model';
 export class FlourdebtService {
 
 
-  
-  constructor(private db:AngularFireDatabase) {
-  
+
+  constructor(private db: AngularFireDatabase) {
+
   }
-     
-     getAll(id:any): AngularFireList<FlourDebt> {
-    return  this.db.list('/distributor_goods', ref => ref.child(id).orderByChild('date'));
-    }
-  
-    add(debt: FlourDebt,id:any): any {
-      var newId= this.db.createPushId();
-      debt.id=newId;
-      return this.db.list('/distributor_goods', ref => ref.child(id).push(debt));
-     
-    }
 
-    getAllInsideDates(id:string,date1:number,date2:number) :AngularFireList<FlourDebt>{
- 
-      return  this.db.list('/distributor_goods', ref => ref.child(id).orderByChild('date').startAt(date2).endAt(date1));
- 
+  getAll(id: any): AngularFireList<FlourDebt> {
+    return this.db.list('/distributor_goods', ref => ref.child(id).orderByChild('date'));
+  }
 
-  
-     } 
+  add(debt: FlourDebt, id: any): any {
+    var newId = this.db.createPushId();
+    debt.id = newId;
+    return this.db.list('/distributor_goods', ref => ref.child(id).push(debt));
 
-  
+  }
+
+  getAllInsideDates(id: string, date1: number, date2: number): AngularFireList<FlourDebt> {
+
+    return this.db.list('/distributor_goods', ref => ref.child(id).orderByChild('date').startAt(date2).endAt(date1));
+
+
+
+  }
+
+
 }

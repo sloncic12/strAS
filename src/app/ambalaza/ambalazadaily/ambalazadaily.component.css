@@ -15,45 +15,46 @@
     padding-bottom:3% ;
 } */
 .card {
-    max-width: 400px;
-  }
-  
-  .example-header-image {
-    background-image: url("../../../assets/baker.png");
-    background-size: cover;
-  }
+  max-width: 400px;
+}
+
+.example-header-image {
+  background-image: url("../../../assets/baker.png");
+  background-size: cover;
+}
 
 
-  .card-img-top{
-    object-fit: contain !important;
-  }
+.card-img-top {
+  object-fit: contain !important;
+}
 
 
-   
-    .card {
-    margin-left:2%;
-    margin-top:3%;
-    margin-bottom:2%;
-    padding: 2%;
-    opacity:0.85;
-    
-    }
-    .card-img-top{
-        margin-left: 30%;
-    }
 
-  
-    .btn{
-      margin-left: 25%; 
+.card {
+  margin-left: 2%;
+  margin-top: 3%;
+  margin-bottom: 2%;
+  padding: 2%;
+  opacity: 0.85;
+
+}
+
+.card-img-top {
+  margin-left: 30%;
+}
+
+
+.btn {
+  margin-left: 25%;
   margin-top: 2%;
-  color:white;
+  color: white;
   background-color: #bb5098 !important;
-  }
+}
 
 
-.container-fluid{
+.container-fluid {
   padding-bottom: 2%;
-    background-image:  url("../../../assets/adam-wilson-6ZZh8kOyW-4-unsplash.jpg"); 
-      background-size: cover;
+  background-image: url("../../../assets/adam-wilson-6ZZh8kOyW-4-unsplash.jpg");
+  background-size: cover;
 
 }

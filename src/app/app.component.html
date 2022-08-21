@@ -1,59 +1,63 @@
 <link rel="manifest" href="manifest.json">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
- 
-  <script type="text/javascript"
-  src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js">
 </script>
 
 
 
-<nav class="navbar navbar-expand-sm bg-dark navbar-dark nav-special"  *ngIf="login">
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark nav-special" *ngIf="login">
   <div class="navbar-header">
-    <a class="navbar-brand" routerLink='' > <p class="headermarket">MARKET AS</p><span class="headerstore">({{store}})</span> </a>
+    <a class="navbar-brand" routerLink=''>
+      <p class="headermarket">MARKET AS</p><span class="headerstore">({{store}})</span>
+    </a>
 
   </div>
-  <button class="navbar-toggler" (click)="isMenuCollapsed = !isMenuCollapsed" type="button" >
+  <button class="navbar-toggler" (click)="isMenuCollapsed = !isMenuCollapsed" type="button">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <div [ngbCollapse]="isMenuCollapsed" class="collapse navbar-collapse w-100  justify-content-end" id="navbarNavDropdown">
+  <div [ngbCollapse]="isMenuCollapsed" class="collapse navbar-collapse w-100  justify-content-end"
+    id="navbarNavDropdown">
     <ul class="navbar-nav ">
-  <li class="nav-item active">
-  <a class="nav-link" (click)="isMenuCollapsed = true" routerLink='dug'> Dug</a>
-  </li>
-  <li class="nav-item">
-  <a class="nav-link" [routerLinkActive]="['active']" (click)="isMenuCollapsed = true" routerLink="ambalaza">Ambalaza</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" [routerLinkActive]="['active']" (click)="isMenuCollapsed = true" routerLink="distributeri">Distributeri</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" [routerLinkActive]="['active']" (click)="isMenuCollapsed = true" routerLink="hleb">Hleb</a>
+      <li class="nav-item active">
+        <a class="nav-link" (click)="isMenuCollapsed = true" routerLink='dug'> Dug</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" [routerLinkActive]="['active']" (click)="isMenuCollapsed = true" routerLink="proizvodi">Proizvodi</a>
-        </li>
+        <a class="nav-link" [routerLinkActive]="['active']" (click)="isMenuCollapsed = true"
+          routerLink="ambalaza">Ambalaza</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLinkActive]="['active']" (click)="isMenuCollapsed = true"
+          routerLink="distributeri">Distributeri</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLinkActive]="['active']" (click)="isMenuCollapsed = true" routerLink="hleb">Hleb</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLinkActive]="['active']" (click)="isMenuCollapsed = true"
+          routerLink="proizvodi">Proizvodi</a>
+      </li>
     </ul>
-    <button class=" btn btn-dark hi" >
-     <img class="img"  src="../assets/mystore.png"  >
-  </button>
-        <div  ngbDropdown role="group" aria-label="Button group with nested dropdown">
-          <button class=" btn btn-dark"  ngbDropdownToggle > </button>
-          <div class="dropdown-menu dropdown-menu-end" ngbDropdownMenu>
-            <button ngbDropdownItem *ngIf="user.charAt(0)!='g'" (click)="pickStore('Pricinovic')">Pricinovic</button>
-            <button ngbDropdownItem *ngIf="user.charAt(0)!='m'" (click)="pickStore('Glusci')">Glusci</button>
-            <button ngbDropdownItem  > <a href="../assets/marketas.apk">Skini aplikaciju</a></button>
-           
-           
-            <div class="dropdown-divider"></div>
-            <button ngbDropdownItem (click)="logOut()">Odjavi se</button>
-          
-          </div>
+    <button class=" btn btn-dark hi">
+      <img class="img" src="../assets/mystore.png">
+    </button>
+    <div ngbDropdown role="group" aria-label="Button group with nested dropdown">
+      <button class=" btn btn-dark" ngbDropdownToggle> </button>
+      <div class="dropdown-menu dropdown-menu-end" ngbDropdownMenu>
+        <button ngbDropdownItem *ngIf="user.charAt(0)!='g'" (click)="pickStore('Pricinovic')">Pricinovic</button>
+        <button ngbDropdownItem *ngIf="user.charAt(0)!='m'" (click)="pickStore('Glusci')">Glusci</button>
+        <button ngbDropdownItem> <a href="../assets/marketas.apk">Skini aplikaciju</a></button>
+
+
+        <div class="dropdown-divider"></div>
+        <button ngbDropdownItem (click)="logOut()">Odjavi se</button>
+
       </div>
- 
-</div>
-  </nav> 
+    </div>
+
+  </div>
+</nav>
 
 <app-login *ngIf="!login"> </app-login>
 <router-outlet *ngIf="login"> </router-outlet>
-

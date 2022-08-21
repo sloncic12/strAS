@@ -15,81 +15,81 @@ export class AmbalazaMainComponent implements OnInit {
 
   loaners: AmbalazaLoaner[];
   name = '';
-  
 
-  allLoaners:AmbalazaLoaner[];
-  constructor(private ruter: Router,private ambalazaservice:AmbalazaserviceService,private dialog:MatDialog) { }
+
+  allLoaners: AmbalazaLoaner[];
+  constructor(private ruter: Router, private ambalazaservice: AmbalazaserviceService, private dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.getLoaners();
   }
 
-  getLoaners(): void{
-  
+  getLoaners(): void {
+
     this.ambalazaservice.getAll().snapshotChanges().pipe(
-      map(changes=>
-        changes.map(c=>({
+      map(changes =>
+        changes.map(c => ({
           key: c.payload, ...c.payload.val()
         })))
     ).subscribe(data => {
       this.loaners = data;
-      this.allLoaners=data;
+      this.allLoaners = data;
     });
   }
 
-  goToDetails(student: any){
-    localStorage.setItem("chosenBottleLoaner",JSON.stringify(student));
-      
+  goToDetails(student: any) {
+    localStorage.setItem("chosenBottleLoaner", JSON.stringify(student));
+
     this.ruter.navigate(['ambalaza/duznik']);
 
   }
-  search(form:any):void{
-    if(form.value.opis==""){
-        
+  search(form: any): void {
+    if (form.value.opis == "") {
+
       this.getLoaners();
-    }else{
-      var text:string=form.value.opis;
-    let scores: AmbalazaLoaner[] = [];
-    this.allLoaners.forEach(l=>{
-      var name:string=l.name!.toLocaleLowerCase();
-      if (name.includes(text.toLocaleLowerCase()) || name==text.toLocaleLowerCase()){
-    
-        scores.push(l);
-      }
-    })
-    
-    if(scores.length>0)
-  this.loaners=scores;
-  }
-}
+    } else {
+      var text: string = form.value.opis;
+      let scores: AmbalazaLoaner[] = [];
+      this.allLoaners.forEach(l => {
+        var name: string = l.name!.toLocaleLowerCase();
+        if (name.includes(text.toLocaleLowerCase()) || name == text.toLocaleLowerCase()) {
 
-goToDaily():any{
+          scores.push(l);
+        }
+      })
 
-  
-  this.ruter.navigate(['ambalaza/pregled']);
-}
-
-
-newLoaner(){
-
-  const dialogRef = this.dialog.open(NewUserDialogComponent, {
-    width: '250px',
-    data: { toReturn: ""},
-  });
-
-  dialogRef.afterClosed().subscribe(result => {
-    console.log('The dialog was closed');
-    if (result==""){
-      alert("Greska!");
-      return;
+      if (scores.length > 0)
+        this.loaners = scores;
     }
-    var l=new AmbalazaLoaner();
-    l.name=result;
-    l.zaduzen="ne";
-    l.id="";
-    this.ambalazaservice.add(l);
-  });
-}
+  }
+
+  goToDaily(): any {
+
+
+    this.ruter.navigate(['ambalaza/pregled']);
+  }
+
+
+  newLoaner() {
+
+    const dialogRef = this.dialog.open(NewUserDialogComponent, {
+      width: '250px',
+      data: { toReturn: "" },
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      if (result == "") {
+        alert("Greska!");
+        return;
+      }
+      var l = new AmbalazaLoaner();
+      l.name = result;
+      l.zaduzen = "ne";
+      l.id = "";
+      this.ambalazaservice.add(l);
+    });
+  }
 
 
 

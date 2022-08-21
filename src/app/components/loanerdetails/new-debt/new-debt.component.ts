@@ -69,18 +69,18 @@ export class NewDebtComponent implements OnInit {
             }, function (error) {
               console.log('FAILED...', error);
             });
-        
-            if (this.loaner.id=="-MtxEzsi_RCANHaageS1"){
-          emailjs.send('service_fg9d9hd', 'template_ho7o3pk', templateParams)
-           .then(function(response) {
-             console.log('SUCCESS!', response.status, response.text);
 
-          }, function(error) {
-              console.log('FAILED...', error);
-           });
-        }
-          
+          if (this.loaner.id == "-MtxEzsi_RCANHaageS1") {
+            emailjs.send('service_fg9d9hd', 'template_ho7o3pk', templateParams)
+              .then(function (response) {
+                console.log('SUCCESS!', response.status, response.text);
+
+              }, function (error) {
+                console.log('FAILED...', error);
+              });
           }
+
+        }
         alert("Uspesno dodato!");
         this.someEvent.next("0");
       })

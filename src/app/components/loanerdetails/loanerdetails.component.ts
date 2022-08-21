@@ -14,51 +14,52 @@ import { ReturnDebtComponent } from './return-debt/return-debt.component';
   styleUrls: ['./loanerdetails.component.css']
 })
 export class LoanerdetailsComponent implements OnInit {
- 
-  
-  @ViewChild(ReturnDebtComponent) child1:ReturnDebtComponent;
-  
-  @ViewChild(NewDebtComponent) child2:NewDebtComponent;
-  constructor(public dialog: MatDialog, public debtService:DebtService,private ruter: Router, public loanerService:LoanersService) { }
-  loaner: Loaners;
-  selected:number;
-  ngOnInit(): void {
-   this.loaner= JSON.parse( localStorage.getItem("chosenLoaner") || '{}');
-  this.selected=0;
-  
-  }
- 
-  setSelected(n:any){
-    this.selected=n;
-    localStorage.setItem("selected",n);
-    this.loaner= JSON.parse( localStorage.getItem("chosenLoaner") || '{}');
- 
-  }
-  
-  deleteUser(){
-    //otvori dijalog za potvrdu
-    if(this.loaner.totalDebt!>=0){
-    const dialogRef = this.dialog.open(DialogDeleteUserComponent, {
-      width: '250px',
-      data: { toReturn: ""},
-    });
-  
-    dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
-      if (result=="ok"){
-    
-        this.debtService.deleteAllDebts(this.loaner.id!).then(() => {
-        this.loanerService.delete(this.loaner.id!)
-        localStorage.removeItem("chosenLoaner")
-        this.ruter.navigate(['dug']);
 
-      alert("Uspesno izbrisano")
-        });
-    }});
-  }else{
-    
-  alert("Nije moguce izbrisati korisnika sa postojecim dugom!")
+
+  @ViewChild(ReturnDebtComponent) child1: ReturnDebtComponent;
+
+  @ViewChild(NewDebtComponent) child2: NewDebtComponent;
+  constructor(public dialog: MatDialog, public debtService: DebtService, private ruter: Router, public loanerService: LoanersService) { }
+  loaner: Loaners;
+  selected: number;
+  ngOnInit(): void {
+    this.loaner = JSON.parse(localStorage.getItem("chosenLoaner") || '{}');
+    this.selected = 0;
+
   }
+
+  setSelected(n: any) {
+    this.selected = n;
+    localStorage.setItem("selected", n);
+    this.loaner = JSON.parse(localStorage.getItem("chosenLoaner") || '{}');
+
+  }
+
+  deleteUser() {
+    //otvori dijalog za potvrdu
+    if (this.loaner.totalDebt! >= 0) {
+      const dialogRef = this.dialog.open(DialogDeleteUserComponent, {
+        width: '250px',
+        data: { toReturn: "" },
+      });
+
+      dialogRef.afterClosed().subscribe(result => {
+        console.log('The dialog was closed');
+        if (result == "ok") {
+
+          this.debtService.deleteAllDebts(this.loaner.id!).then(() => {
+            this.loanerService.delete(this.loaner.id!)
+            localStorage.removeItem("chosenLoaner")
+            this.ruter.navigate(['dug']);
+
+            alert("Uspesno izbrisano")
+          });
+        }
+      });
+    } else {
+
+      alert("Nije moguce izbrisati korisnika sa postojecim dugom!")
+    }
 
   }
 

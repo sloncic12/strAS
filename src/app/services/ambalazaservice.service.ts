@@ -9,66 +9,66 @@ export class AmbalazaserviceService {
   private dbPath = '/mp_bottleloaners';
 
   loanersRef: AngularFireList<AmbalazaLoaner>;
-  
-  constructor(private db:AngularFireDatabase) {
-    
-  
-   }
+
+  constructor(private db: AngularFireDatabase) {
 
 
-   getAll(): AngularFireList<AmbalazaLoaner> {
-     
-    var store=localStorage.getItem("chosenStore");
-    if (store=="Pricinovic"){ 
-    return this.db.list('/mp_bottleloaners', ref => ref.orderByChild("zaduzen"));
+  }
+
+
+  getAll(): AngularFireList<AmbalazaLoaner> {
+
+    var store = localStorage.getItem("chosenStore");
+    if (store == "Pricinovic") {
+      return this.db.list('/mp_bottleloaners', ref => ref.orderByChild("zaduzen"));
     }
-    else{
-    return this.db.list('/glu_bottleloaners', ref => ref.orderByChild("zaduzen"));
+    else {
+      return this.db.list('/glu_bottleloaners', ref => ref.orderByChild("zaduzen"));
     }
   }
 
   update(key: string, value: any): Promise<void> {
-    var store=localStorage.getItem("chosenStore");
-    if (store=="Pricinovic"){
-     
-      return this.db.list('/mp_bottleloaners').update(key,value);
-    }else{
-      return this.db.list('/glu_bottleloaners').update(key,value);
-    
+    var store = localStorage.getItem("chosenStore");
+    if (store == "Pricinovic") {
+
+      return this.db.list('/mp_bottleloaners').update(key, value);
+    } else {
+      return this.db.list('/glu_bottleloaners').update(key, value);
+
     }
   }
 
   add(loaner: AmbalazaLoaner): any {
-    
-    var store=localStorage.getItem("chosenStore");
-    if (store=="Pricinovic"){
-    
-      var someRef=this.db.database.ref().child('mp_bottleloaners').push();
-      var newId=someRef.key;
-      loaner.id=newId;
-    return someRef.set(loaner);
-    }else{
-      var someRef=this.db.database.ref().child('glu_bottleloaners').push();
-    
-      var newId=someRef.key;
-      loaner.id=newId;
+
+    var store = localStorage.getItem("chosenStore");
+    if (store == "Pricinovic") {
+
+      var someRef = this.db.database.ref().child('mp_bottleloaners').push();
+      var newId = someRef.key;
+      loaner.id = newId;
+      return someRef.set(loaner);
+    } else {
+      var someRef = this.db.database.ref().child('glu_bottleloaners').push();
+
+      var newId = someRef.key;
+      loaner.id = newId;
       return someRef.set(loaner);
     }
   }
-  
 
-delete(userId:string): Promise<void> {
-  var store=localStorage.getItem("chosenStore");
-  
-  if (store=="Pricinovic"){
-    var newRef=this.db.database.ref().child("mp_bottleloaners").child(userId);
-    return newRef.remove();
-  }else{
-    var newRef=this.db.database.ref().child("glu_bottleloaners").child(userId);
-    return newRef.remove();
-  
-}
-  
 
-}
+  delete(userId: string): Promise<void> {
+    var store = localStorage.getItem("chosenStore");
+
+    if (store == "Pricinovic") {
+      var newRef = this.db.database.ref().child("mp_bottleloaners").child(userId);
+      return newRef.remove();
+    } else {
+      var newRef = this.db.database.ref().child("glu_bottleloaners").child(userId);
+      return newRef.remove();
+
+    }
+
+
+  }
 }

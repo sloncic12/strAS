@@ -8,9 +8,9 @@ describe('ReturnDebtComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ReturnDebtComponent ]
+      declarations: [ReturnDebtComponent]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

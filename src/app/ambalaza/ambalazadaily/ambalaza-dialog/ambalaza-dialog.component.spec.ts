@@ -8,9 +8,9 @@ describe('AmbalazaDialogComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AmbalazaDialogComponent ]
+      declarations: [AmbalazaDialogComponent]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

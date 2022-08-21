@@ -15,46 +15,45 @@
   </div>
     </nav>  -->
 
-<div class="container-fluid" >
+<div class="container-fluid">
 
-  <button (click)="openReturnedBread()"   class="btn btn-dark">Vracen hleb</button> 
-  <button  (click)="openNewBread()" class="btn btn-success">Nov hleb</button> 
- <br>
- <br>
- <br>
- <div  *ngIf='bread.length==0'>
-  <h1>Nema vracenog hleba!</h1>
+  <button (click)="openReturnedBread()" class="btn btn-dark">Vracen hleb</button>
+  <button (click)="openNewBread()" class="btn btn-success">Nov hleb</button>
+  <br>
+  <br>
+  <br>
+  <div *ngIf='bread.length==0'>
+    <h1>Nema vracenog hleba!</h1>
   </div>
-  <table  class="table  table-sm" *ngIf='bread.length!=0' >
-       <thead class="thead-light">
+  <table class="table  table-sm" *ngIf='bread.length!=0'>
+    <thead class="thead-light">
 
-<th scope="col">Datum</th>
-<th scope="col">Distributer</th>
-<th scope="col">Tip</th>
-<th scope="col">Kolicina</th>
-        </thead>
-        <tbody>
-      <tr  *ngFor='let student of bread; index as i' >
-     
+      <th scope="col">Datum</th>
+      <th scope="col">Distributer</th>
+      <th scope="col">Tip</th>
+      <th scope="col">Kolicina</th>
+    </thead>
+    <tbody>
+      <tr *ngFor='let student of bread; index as i'>
+
         <td>
-            {{getDate(student.datum) | date:'dd/MM/yyyy'}}
-         </td>
-         <td>
-        
-            {{student.distributor}}
-           </td>
-           <td>        
-            {{student.type}}
-           </td>
-           <td>   
-            {{student.kolicina}}
-           </td>
-         <td  id="bla">
-          <div  (click)="returnBread(student)"     class='fa fa-exchange rozetekst' aria-hidden='true'></div>
+          {{getDate(student.datum) | date:'dd/MM/yyyy'}}
         </td>
-         </tr>
- </tbody>
-    </table>
+        <td>
+
+          {{student.distributor}}
+        </td>
+        <td>
+          {{student.type}}
+        </td>
+        <td>
+          {{student.kolicina}}
+        </td>
+        <td id="bla">
+          <div (click)="returnBread(student)" class='fa fa-exchange rozetekst' aria-hidden='true'></div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 
 </div>
-  

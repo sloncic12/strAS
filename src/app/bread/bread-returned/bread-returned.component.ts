@@ -12,30 +12,30 @@ import { BreadService } from 'src/app/services/bread.service';
 })
 export class BreadReturnedComponent implements OnInit {
 
-  
+
 
   bread: Bread[];
   toReturn: number;
-  
+
   public isMenuCollapsed = true;
-  constructor(private breadService : BreadService,private ruter: Router,public dialog: MatDialog) { }
+  constructor(private breadService: BreadService, private ruter: Router, public dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.getLoaners();
   }
 
-    getLoaners(): void{
-      this.breadService.getAllReturned().snapshotChanges().pipe(
-        map(changes=>
-          changes.map(c=>({
-            key: c.payload, ...c.payload.val()
-          })))
-      ).subscribe(data => {
-        this.bread = data;
-      });
-    }
-  getDate(milies:any){
-    return milies*-1
+  getLoaners(): void {
+    this.breadService.getAllReturned().snapshotChanges().pipe(
+      map(changes =>
+        changes.map(c => ({
+          key: c.payload, ...c.payload.val()
+        })))
+    ).subscribe(data => {
+      this.bread = data;
+    });
+  }
+  getDate(milies: any) {
+    return milies * -1
   }
 
 

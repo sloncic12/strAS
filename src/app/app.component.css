@@ -1,43 +1,47 @@
-#loginimage{
+#loginimage {
     height: 5%;
     width: 5%;
     margin-left: 0%;
-    
+
 }
 
 
-.navbar{
-  
-    color:#17224d  !important;
+.navbar {
+
+    color: #17224d !important;
 
     padding: 1%;
     padding-left: 2%;
 }
-.headermarket{
+
+.headermarket {
     font-size: 17pt;
     margin-left: 5%;
     font-weight: bold;
-    
+
     margin-bottom: 0rem;
-    
+
 }
-.headerstore{
+
+.headerstore {
     font-size: 11pt;
     margin-left: 5%;
 }
-.nav-link{
-font-size: 13pt;
+
+.nav-link {
+    font-size: 13pt;
 }
 
-.nav-addition{
+.nav-addition {
     padding: 0% !important;
     background-color: rgb(67, 70, 70) !important;
 }
-.active{
-    color:white  !important;
+
+.active {
+    color: white !important;
 }
 
-.storediv{
+.storediv {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -45,17 +49,20 @@ font-size: 13pt;
 
 }
 
-.dropdown-menu{
+.dropdown-menu {
     right: 0 !important;
     background-color: rgb(255, 255, 255);
 }
-.navbar-header{
+
+.navbar-header {
     text-align: center !important;
 }
-.btn-dark{
-padding: 0.2% !important;
+
+.btn-dark {
+    padding: 0.2% !important;
 
 }
-.hi{
+
+.hi {
     margin-left: 2%;
 }

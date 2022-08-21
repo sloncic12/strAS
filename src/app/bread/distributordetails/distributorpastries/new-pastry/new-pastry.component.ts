@@ -13,25 +13,25 @@ import { PastryService } from 'src/app/services/pastry.service';
 export class NewPastryComponent implements OnInit {
 
   @Output() someEvent = new EventEmitter<string>();
-  constructor(private pastryService:PastryService,private fb:FormBuilder) { }
+  constructor(private pastryService: PastryService, private fb: FormBuilder) { }
 
-  myForm:Form;
-  
+  myForm: Form;
+
   distributor: Distributor;
   ngOnInit(): void {
-    
-    this.distributor=JSON.parse(localStorage.getItem("chosenDistributor") || '{}');
+
+    this.distributor = JSON.parse(localStorage.getItem("chosenDistributor") || '{}');
   }
 
-  submitCompany(form:any){
- 
-    var  d=new Pastry();
-    d.name=form.value.naziv;
-    d.cena=form.value.iznos;
- 
-    d.id="";
+  submitCompany(form: any) {
 
-    this.pastryService.addNewPastry(this.distributor.id!,d);
+    var d = new Pastry();
+    d.name = form.value.naziv;
+    d.cena = form.value.iznos;
+
+    d.id = "";
+
+    this.pastryService.addNewPastry(this.distributor.id!, d);
     this.someEvent.next("1");
-    }
+  }
 }

@@ -1,27 +1,32 @@
-::ng-deep .mat-form-field-flex > .mat-form-field-infix { padding: 0.5em 0px !important;}
+::ng-deep .mat-form-field-flex>.mat-form-field-infix {
+  padding: 0.5em 0px !important;
+}
 
 ::ng-deep .mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label {
-    transform: translateY(-1.0em) scale(.65);
-    width: 133.33333%;
+  transform: translateY(-1.0em) scale(.65);
+  width: 133.33333%;
 }
-.container-fluid{
-    padding-bottom: 15%;
-      background-image:  url("../../../../assets/adam-wilson-6ZZh8kOyW-4-unsplash.jpg"); 
-        background-size: cover;
-  
-  }
-.formBox{
-    margin-top: 5%;   
-    border-collapse: collapse;
-    padding: 2%;
-    margin-left: 1%;
-    font-size: 1em;
-    opacity: 0.9;
-    background-color: white;
-    font-family: sans-serif;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-  
-   }
-   .btn{
-margin-left: 26%;
-   }
+
+.container-fluid {
+  padding-bottom: 15%;
+  background-image: url("../../../../assets/adam-wilson-6ZZh8kOyW-4-unsplash.jpg");
+  background-size: cover;
+
+}
+
+.formBox {
+  margin-top: 5%;
+  border-collapse: collapse;
+  padding: 2%;
+  margin-left: 1%;
+  font-size: 1em;
+  opacity: 0.9;
+  background-color: white;
+  font-family: sans-serif;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+
+}
+
+.btn {
+  margin-left: 26%;
+}

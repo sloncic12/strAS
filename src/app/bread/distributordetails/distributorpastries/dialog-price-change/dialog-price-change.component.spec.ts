@@ -8,9 +8,9 @@ describe('DialogPriceChangeComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DialogPriceChangeComponent ]
+      declarations: [DialogPriceChangeComponent]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

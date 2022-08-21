@@ -1,29 +1,29 @@
 <div class="container" *ngIf='debts.length!=0'>
- <br>
-     <table class="table table-striped" >
-        <thead>
- <th style="padding: 8px;">Iznos</th>
- <th style="padding: 8px;">Cedulja</th>
- <th style="padding: 8px;">Datum</th>
-         </thead>
-         <tbody>
-       <tr  *ngFor='let student of debts' >
-          <td>
-       <span *ngIf="student.value!<0" [ngStyle]="{'color': 'rgb(235, 82, 82)'}"> {{student.value}}</span> 
-       <span *ngIf='student.value!>0' [ngStyle]="{'color': 'lightgreen'}">  +{{student.value}}</span> 
-          </td>
-
-          <td>
-            {{student.cedulja}}
-           </td>
-          <td>
-         
-             {{getDate(student.date) | date:'dd/MM/yyyy'}}
+   <br>
+   <table class="table table-striped">
+      <thead>
+         <th style="padding: 8px;">Iznos</th>
+         <th style="padding: 8px;">Cedulja</th>
+         <th style="padding: 8px;">Datum</th>
+      </thead>
+      <tbody>
+         <tr *ngFor='let student of debts'>
+            <td>
+               <span *ngIf="student.value!<0" [ngStyle]="{'color': 'rgb(235, 82, 82)'}"> {{student.value}}</span>
+               <span *ngIf='student.value!>0' [ngStyle]="{'color': 'lightgreen'}"> +{{student.value}}</span>
             </td>
-         
-          
-          
-          </tr>
-         </tbody>
-     </table>
+
+            <td>
+               {{student.cedulja}}
+            </td>
+            <td>
+
+               {{getDate(student.date) | date:'dd/MM/yyyy'}}
+            </td>
+
+
+
+         </tr>
+      </tbody>
+   </table>
 </div>

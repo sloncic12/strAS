@@ -1,70 +1,69 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 
-<div class="container-fluid" >
+<div class="container-fluid">
 
 
   <div class="myimage  ">
-    
+
     <div class="header">
-      <h1 >Ambalaza</h1>
+      <h1>Ambalaza</h1>
       <br>
-      <button   (click)="goToDaily()"  class=" btn btn2 btn-warning" aria-hidden='true'>Pregled</button>
+      <button (click)="goToDaily()" class=" btn btn2 btn-warning" aria-hidden='true'>Pregled</button>
 
     </div>
-    
-    
-    <img class="img"  align="center" src="../../assets/ambalazaheader.jpg" alt="Card image" style="width:45%;">
-    
-  <br>
-  
+
+
+    <img class="img" align="center" src="../../assets/ambalazaheader.jpg" alt="Card image" style="width:45%;">
+
+    <br>
+
   </div>
   <br>
   <br>
-  <button  (click)="newLoaner()"    class=" btn btnleft " aria-hidden='true'><i class="fa fa-plus" ></i>  Novi korisnik</button>
-  
-  <form #myForm="ngForm" (ngSubmit)="search(myForm.form);"> 
-    <div id="searchdiv" >
-      
-      <mat-form-field class="w-20 searchfield" appearance="outline">
-      
-        <input  matInput placeholder="Pretraga"  name="opis"  ngModel
-      #opis="ngModel"
-      >   
-      </mat-form-field>
-      <button   class="btn btnSearch " aria-hidden='Left Align'>  <span class="fa fa-search fa-sm" aria-hidden="true"></span></button>
-    </div>
-</form>
- 
-    <!-- (click)="goToDaily()"  -->
-  <br>
-    <br>
+  <button (click)="newLoaner()" class=" btn btnleft " aria-hidden='true'><i class="fa fa-plus"></i> Novi
+    korisnik</button>
 
-    <table class="table table-striped table-sm" *ngIf='loaners.length!=0' >
-       <thead>
-         
-       <th scope="col">#</th>
+  <form #myForm="ngForm" (ngSubmit)="search(myForm.form);">
+    <div id="searchdiv">
+
+      <mat-form-field class="w-20 searchfield" appearance="outline">
+
+        <input matInput placeholder="Pretraga" name="opis" ngModel #opis="ngModel">
+      </mat-form-field>
+      <button class="btn btnSearch " aria-hidden='Left Align'> <span class="fa fa-search fa-sm"
+          aria-hidden="true"></span></button>
+    </div>
+  </form>
+
+  <!-- (click)="goToDaily()"  -->
+  <br>
+  <br>
+
+  <table class="table table-striped table-sm" *ngIf='loaners.length!=0'>
+    <thead>
+
+      <th scope="col">#</th>
       <th scope="col">Ime</th>
 
 
-        </thead>
-        <tbody>
-      <tr  *ngFor='let student of loaners ; index as i'>
+    </thead>
+    <tbody>
+      <tr *ngFor='let student of loaners ; index as i'>
         <th scope="row">{{ i + 1 }}</th>
-         <td>
-          <span *ngIf="student.zaduzen!=='da'" [ngStyle]="{'color': 'lightgreen'}"> {{student.name}}</span> 
-          <span *ngIf="student.zaduzen!=='ne'" [ngStyle]="{'color': 'white'}"> {{student.name}}</span> 
-     
-         </td>
-         
-         
-         <td id="bla">
-          <div  (click)="goToDetails(student)"    class='fa fa-info-circle rozetekst' aria-hidden='true'></div>
+        <td>
+          <span *ngIf="student.zaduzen!=='da'" [ngStyle]="{'color': 'lightgreen'}"> {{student.name}}</span>
+          <span *ngIf="student.zaduzen!=='ne'" [ngStyle]="{'color': 'white'}"> {{student.name}}</span>
+
+        </td>
+
+
+        <td id="bla">
+          <div (click)="goToDetails(student)" class='fa fa-info-circle rozetekst' aria-hidden='true'></div>
           <!--  -->
         </td>
-         </tr>
-        </tbody>
-    </table>
+      </tr>
+    </tbody>
+  </table>
 
 </div>
-  

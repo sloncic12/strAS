@@ -1,31 +1,25 @@
-
-
 <div class="box">
-    <h5>Unesite novo pecivo</h5>
-<form #myForm="ngForm" (ngSubmit)="submitCompany(myForm.form);">
+  <h5>Unesite novo pecivo</h5>
+  <form #myForm="ngForm" (ngSubmit)="submitCompany(myForm.form);">
 
-    <p >Naziv
-        <mat-form-field class="w-100" appearance="outline">
-        
-          <input   matInput   name="naziv"  ngModel
-        #naziv="ngModel"
-        >   
-        </mat-form-field>
-      </p>
-       
+    <p>Naziv
+      <mat-form-field class="w-100" appearance="outline">
 
-    <p >Cena
-    <mat-form-field class="w-100" appearance="outline">
-  <input matInput type="number"   class="h-100" name="iznos" required ngModel
-  #iznos="ngModel"
-  >
-</mat-form-field>
-</p>
-  
+        <input matInput name="naziv" ngModel #naziv="ngModel">
+      </mat-form-field>
+    </p>
 
-  <br>
-      
-   <button class="btn " [disabled]="!myForm.valid">Dodaj</button>
-</form>
+
+    <p>Cena
+      <mat-form-field class="w-100" appearance="outline">
+        <input matInput type="number" class="h-100" name="iznos" required ngModel #iznos="ngModel">
+      </mat-form-field>
+    </p>
+
+
+    <br>
+
+    <button class="btn " [disabled]="!myForm.valid">Dodaj</button>
+  </form>
 
 </div>

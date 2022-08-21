@@ -1,36 +1,37 @@
 <br>
 
 <div class="container-fluid ">
-  <button (click)="deleteUser()"    class=" btn btnleft btn-danger" aria-hidden='true'><i class="fa fa-trash" ></i> Izbrisi korisnika</button>
-  
-   <div class="row w-100 justify-content-center"> 
-   <div class="vertical-menu col-md-3  rozepozadina">
-     <br>
-     
-    <img class=" img "  align="center" src="../../../assets/patient.png" alt="Card image" style="width:45%">
+  <button (click)="deleteUser()" class=" btn btnleft btn-danger" aria-hidden='true'><i class="fa fa-trash"></i> Izbrisi
+    korisnika</button>
 
-   <br>
-  <h3 id="header">{{loaner.name}}</h3>
-  <br>
-  <div class="cedulja zutapozadina ljubicastitekst ">
-    <div class="ceduljaimage"> 
-      <img    src="../../../assets/pare.png" alt="Card image" style="width:20%">
- <span class="debt">
-         {{loaner.totalDebt}}
- </span>
-   </div>
- 
-  </div>
-  <br>
+  <div class="row w-100 justify-content-center">
+    <div class="vertical-menu col-md-3  rozepozadina">
+      <br>
 
-   <a routerLinkActive="active" (click)="setSelected(0)">Pregled istorije duga</a>
-   <a  (click)="setSelected(1)"> Novo zaduzenje</a>
-   <a  (click)="setSelected(2)">Vracen dug</a>
+      <img class=" img " align="center" src="../../../assets/patient.png" alt="Card image" style="width:45%">
+
+      <br>
+      <h3 id="header">{{loaner.name}}</h3>
+      <br>
+      <div class="cedulja zutapozadina ljubicastitekst ">
+        <div class="ceduljaimage">
+          <img src="../../../assets/pare.png" alt="Card image" style="width:20%">
+          <span class="debt">
+            {{loaner.totalDebt}}
+          </span>
+        </div>
+
+      </div>
+      <br>
+
+      <a routerLinkActive="active" (click)="setSelected(0)">Pregled istorije duga</a>
+      <a (click)="setSelected(1)"> Novo zaduzenje</a>
+      <a (click)="setSelected(2)">Vracen dug</a>
+    </div>
+    <div class="component col-md-9 ">
+      <app-review-debts *ngIf='selected==0'></app-review-debts>
+      <app-new-debt *ngIf='selected==1' (someEvent)="setSelected($event)"></app-new-debt>
+      <app-return-debt *ngIf='selected==2' (someEvent)="setSelected($event)"></app-return-debt>
+    </div>
   </div>
- <div class="component col-md-9 " >
-   <app-review-debts  *ngIf='selected==0' ></app-review-debts>
-   <app-new-debt  *ngIf='selected==1' (someEvent)="setSelected($event)"  ></app-new-debt>
-  <app-return-debt *ngIf='selected==2' (someEvent)="setSelected($event)" ></app-return-debt>
-</div>
-</div>
 </div>

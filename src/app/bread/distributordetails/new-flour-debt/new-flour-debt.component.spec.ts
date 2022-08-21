@@ -8,9 +8,9 @@ describe('NewFlourDebtComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ NewFlourDebtComponent ]
+      declarations: [NewFlourDebtComponent]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

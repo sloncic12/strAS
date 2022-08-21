@@ -16,20 +16,18 @@ export interface User {
 
 export class NgAuthService {
   userState: any;
-  stringUser:string;
-  constructor(  public afAuth: AngularFireAuth,
+  stringUser: string;
+  constructor(public afAuth: AngularFireAuth,
     public router: Router,
-    public ngZone: NgZone) 
-  
-  {
+    public ngZone: NgZone) {
     this.afAuth.authState.subscribe(user => {
-     this.stringUser=JSON.parse(localStorage.getItem('user') || '{}');
- 
-    }) 
-   }
+      this.stringUser = JSON.parse(localStorage.getItem('user') || '{}');
 
-   SignIn(email:any, password:any) {
+    })
+  }
+
+  SignIn(email: any, password: any) {
     return this.afAuth.signInWithEmailAndPassword(email, password)
- 
+
   }
 }

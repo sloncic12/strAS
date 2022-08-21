@@ -2,60 +2,67 @@
 
 @import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
 @import url('https://fonts.googleapis.com/css2?family=Exo:wght@500&display=swap');
-html, body {
+
+html,
+body {
   font-family: 'Exo', sans-serif !important;
   font-weight: bolder;
 }
-td,th{
+
+td,
+th {
   font-weight: bolder;
   color: white !important;
   font-size: 16pt;
 }
-table{
-  
+
+table {
+
   background-color: #242329 !important;
   color: white !important;
 }
-.rozetekst{
-    color: #bb5098;
-  }
 
-  .rozepozadina{
-    background-color: #bb5098;
-  }
+.rozetekst {
+  color: #bb5098;
+}
 
-  .ljubicastitekst{
-    color: #7a5197;
-  }
+.rozepozadina {
+  background-color: #bb5098;
+}
 
-  .ljubicastipozadina{
-    background-color: #7a5197;
-  }
+.ljubicastitekst {
+  color: #7a5197;
+}
 
-  .zutatekst{
-    color: #fef48b;
-  }
+.ljubicastipozadina {
+  background-color: #7a5197;
+}
 
-  .zutapozadina{
-    background-color: #fef48b;
-  }
+.zutatekst {
+  color: #fef48b;
+}
 
-  .plavatekst{
-    color: #5344a9;
-  }
+.zutapozadina {
+  background-color: #fef48b;
+}
 
-  .plavapozadina{
-    background-color: #5344a9;
-  }
-  .narandzastatekst{
-    color: #f47f6b;
-  }
+.plavatekst {
+  color: #5344a9;
+}
 
-  .narandzastapozadina{
-    background-color: #f47f6b;
-  }
+.plavapozadina {
+  background-color: #5344a9;
+}
 
-  .fa:hover{
-    color: #5344a9 !important;
-    cursor: pointer; 
-  }
+.narandzastatekst {
+  color: #f47f6b;
+}
+
+.narandzastapozadina {
+  background-color: #f47f6b;
+}
+
+.fa:hover {
+  color: #5344a9 !important;
+  cursor: pointer;
+}

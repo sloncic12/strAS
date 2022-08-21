@@ -8,9 +8,9 @@ describe('BreadReturnedComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ BreadReturnedComponent ]
+      declarations: [BreadReturnedComponent]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

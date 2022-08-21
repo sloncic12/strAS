@@ -1,25 +1,24 @@
-
 <div mat-dialog-content>
-    <p>Unesite kolicinu koja je vracena</p>
-    <p>Gajbe
+  <p>Unesite kolicinu koja je vracena</p>
+  <p>Gajbe
     <mat-form-field appearance="fill">
-      <input type="number"  placeholder="Gajbe" matInput [(ngModel)]="data.toReturnGajbe">
+      <input type="number" placeholder="Gajbe" matInput [(ngModel)]="data.toReturnGajbe">
     </mat-form-field>
-    </p>
-    <p>Flase
+  </p>
+  <p>Flase
     <mat-form-field appearance="fill">
-        <input type="number" placeholder="Flase" matInput [(ngModel)]="data.toReturnFlase">
-      </mat-form-field>
-      </p>
-      <p>Datum
-        <mat-form-field class="w-100" appearance="outline" >
-          <input matInput  [matDatepicker]="picker" (dateChange)="dateChangedOne($event)" >
-          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-          <mat-datepicker #picker></mat-datepicker>
-        </mat-form-field>
-      </p>  
-  </div>
-  <div mat-dialog-actions>
-    <button mat-button class="btn btn-success" [mat-dialog-close]="data" >Ok</button>
-    <button mat-button class="btn btn-danger" (click)="onNoClick()">Odustani</button>
-  </div>
+      <input type="number" placeholder="Flase" matInput [(ngModel)]="data.toReturnFlase">
+    </mat-form-field>
+  </p>
+  <p>Datum
+    <mat-form-field class="w-100" appearance="outline">
+      <input matInput [matDatepicker]="picker" (dateChange)="dateChangedOne($event)">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+  </p>
+</div>
+<div mat-dialog-actions>
+  <button mat-button class="btn btn-success" [mat-dialog-close]="data">Ok</button>
+  <button mat-button class="btn btn-danger" (click)="onNoClick()">Odustani</button>
+</div>

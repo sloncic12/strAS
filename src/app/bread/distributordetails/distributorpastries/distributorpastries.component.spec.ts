@@ -8,9 +8,9 @@ describe('DistributorpastriesComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DistributorpastriesComponent ]
+      declarations: [DistributorpastriesComponent]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

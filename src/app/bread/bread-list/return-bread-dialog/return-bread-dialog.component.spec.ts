@@ -8,9 +8,9 @@ describe('ReturnBreadDialogComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ReturnBreadDialogComponent ]
+      declarations: [ReturnBreadDialogComponent]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

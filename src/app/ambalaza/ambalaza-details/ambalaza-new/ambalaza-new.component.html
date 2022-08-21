@@ -1,43 +1,38 @@
-
 <div class="box">
-    <h5>Unesite novi dug</h5>
-<form #myForm="ngForm" (ngSubmit)="submitCompany(myForm.form);">
+  <h5>Unesite novi dug</h5>
+  <form #myForm="ngForm" (ngSubmit)="submitCompany(myForm.form);">
 
-    <p >
-        <mat-form-field  appearance="outline">
-            <mat-label>Pivo</mat-label>
-            <mat-select [(ngModel)]="selectedBeerType" name="selectedBeerType"  >
-              <mat-option *ngFor="let beer of beers" [value]="beer" >
-                {{beer}}
-              </mat-option>
-            </mat-select>
-          </mat-form-field >
-</p>
-  <p >Gajbe
-    <mat-form-field class="w-100" appearance="outline">
-  <input matInput type="number"  required class="h-100" name="gajbe"  ngModel
-  #gajbe="ngModel"
-  >
-</mat-form-field>
-</p>
-<p >Flase
-    <mat-form-field class="w-100" appearance="outline">
-  <input matInput type="number"  required class="h-100" name="flase"  ngModel 
-  #flase="ngModel" value=0
-  >
-</mat-form-field>
-</p>
- 
-  <p >Datum
-  <mat-form-field class="w-100" appearance="outline" >
-    <input matInput required  required [matDatepicker]="picker" (dateChange)="dateChanged($event)" >
-    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-    <mat-datepicker #picker></mat-datepicker>
-  </mat-form-field>
-</p>    
-  <br>
-      
-   <button class="btn " [disabled]="!myForm.valid">Dodaj</button>
-</form>
+    <p>
+      <mat-form-field appearance="outline">
+        <mat-label>Pivo</mat-label>
+        <mat-select [(ngModel)]="selectedBeerType" name="selectedBeerType">
+          <mat-option *ngFor="let beer of beers" [value]="beer">
+            {{beer}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </p>
+    <p>Gajbe
+      <mat-form-field class="w-100" appearance="outline">
+        <input matInput type="number" required class="h-100" name="gajbe" ngModel #gajbe="ngModel">
+      </mat-form-field>
+    </p>
+    <p>Flase
+      <mat-form-field class="w-100" appearance="outline">
+        <input matInput type="number" required class="h-100" name="flase" ngModel #flase="ngModel" value=0>
+      </mat-form-field>
+    </p>
+
+    <p>Datum
+      <mat-form-field class="w-100" appearance="outline">
+        <input matInput required required [matDatepicker]="picker" (dateChange)="dateChanged($event)">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+    </p>
+    <br>
+
+    <button class="btn " [disabled]="!myForm.valid">Dodaj</button>
+  </form>
 
 </div>

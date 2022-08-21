@@ -1,18 +1,22 @@
-body{
-width: 100%;
+body {
+    width: 100%;
 }
 
-h4{
+h4 {
     text-align: center;
 }
 
-*, ::after, ::before {
-    box-sizing:unset !important; 
+*,
+::after,
+::before {
+    box-sizing: unset !important;
 }
-.box{
+
+.box {
     margin-left: 5%;
 }
-.table{
-    width: 80% !important ;
+
+.table {
+    width: 80% !important;
     margin-left: 10%;
-    }
+}

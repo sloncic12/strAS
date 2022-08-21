@@ -20,21 +20,21 @@ import { ProductsComponent } from './products/products.component';
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
-  {path: 'dug',component: LoanersListComponent},
-  {path: 'ambalaza',component: AmbalazaMainComponent},
-  {path: 'dug/duznik',component: LoanerdetailsComponent},
-  {path: 'ambalaza/duznik',component: AmbalazaDetailsComponent},
-  {path: 'distributeri',component: DistributorsComponent},
-  {path: 'distributeri/pregled',component: DistributordetailsComponent},
-  {path: 'dug/pregled',component: DailyDebtComponent},
-  {path: 'hleb',component: BreadListComponent},
-  {path: 'hleb/vracen',component: BreadReturnedComponent},
-  {path: 'hleb/nov',component: BreadNewComponent},
-  {path: 'ambalaza/pregled/dnevni',component: AmbalazaDialogComponent},
-  {path: 'ambalaza/pregled',component: AmbalazadailyComponent},
-  {path: 'proizvodi',component: ProductsComponent},
-  
-  {path: 'ambalaza/pregled/vrsta',component: AmbalazaByBeerComponent}
+  { path: 'dug', component: LoanersListComponent },
+  { path: 'ambalaza', component: AmbalazaMainComponent },
+  { path: 'dug/duznik', component: LoanerdetailsComponent },
+  { path: 'ambalaza/duznik', component: AmbalazaDetailsComponent },
+  { path: 'distributeri', component: DistributorsComponent },
+  { path: 'distributeri/pregled', component: DistributordetailsComponent },
+  { path: 'dug/pregled', component: DailyDebtComponent },
+  { path: 'hleb', component: BreadListComponent },
+  { path: 'hleb/vracen', component: BreadReturnedComponent },
+  { path: 'hleb/nov', component: BreadNewComponent },
+  { path: 'ambalaza/pregled/dnevni', component: AmbalazaDialogComponent },
+  { path: 'ambalaza/pregled', component: AmbalazadailyComponent },
+  { path: 'proizvodi', component: ProductsComponent },
+
+  { path: 'ambalaza/pregled/vrsta', component: AmbalazaByBeerComponent }
 ];
 
 @NgModule({

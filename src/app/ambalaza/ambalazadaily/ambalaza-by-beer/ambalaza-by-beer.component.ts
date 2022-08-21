@@ -12,34 +12,34 @@ import { AmbalazaDetailService } from 'src/app/services/ambalaza-detail.service'
 export class AmbalazaByBeerComponent implements OnInit {
 
   constructor(private bottleService: AmbalazaDetailService) { }
-  beerType:string;
-  ambalaza:Ambalaza[]=[];
-  ambalazaglusci:Ambalaza[]=[];
+  beerType: string;
+  ambalaza: Ambalaza[] = [];
+  ambalazaglusci: Ambalaza[] = [];
   ngOnInit(): void {
-    
-    this.beerType=  localStorage.getItem("selectedBeer")!;
-   
+
+    this.beerType = localStorage.getItem("selectedBeer")!;
+
     this.getTheData();
     this.getTheDataGlusci();
   }
-  async  hello2(databaseName:string) :Promise<Ambalaza[]>{
-    return await   this.bottleService.getBeerLoaners(databaseName,this.beerType);
+  async hello2(databaseName: string): Promise<Ambalaza[]> {
+    return await this.bottleService.getBeerLoaners(databaseName, this.beerType);
   };
 
 
 
- async getTheData(){
-  let  p:Ambalaza[]|void= await this.hello2("mp_bottles").catch(error => console.error(error))
+  async getTheData() {
+    let p: Ambalaza[] | void = await this.hello2("mp_bottles").catch(error => console.error(error))
 
-    this.ambalaza=p!;
+    this.ambalaza = p!;
   }
 
 
- 
 
- async getTheDataGlusci(){
-  let  p:Ambalaza[]|void= await this.hello2("glu_bottles").catch(error => console.error(error))
 
-    this.ambalazaglusci=p!;
+  async getTheDataGlusci() {
+    let p: Ambalaza[] | void = await this.hello2("glu_bottles").catch(error => console.error(error))
+
+    this.ambalazaglusci = p!;
   }
 }

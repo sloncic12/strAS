@@ -8,9 +8,9 @@ describe('AmbalazaNewComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AmbalazaNewComponent ]
+      declarations: [AmbalazaNewComponent]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

@@ -1,12 +1,12 @@
 .vertical-menu {
   /* Set a width if you like */
- height: fit-content;
+  height: fit-content;
 
- max-width: 220px !important;
- margin-top: 3%;
+  max-width: 220px !important;
+  margin-top: 3%;
 
- margin-right: 3%;
- margin-bottom: 1%;
+  margin-right: 3%;
+  margin-bottom: 1%;
 }
 
 /* .container{
@@ -15,47 +15,52 @@
   margin-left: 0% !important;
 } */
 .vertical-menu a {
-  background-color:#bb5098; 
-  color: white; 
+  background-color: #bb5098;
+  color: white;
   font-size: 11pt;
   display: block;
-  border-top:1px solid orange;
-  padding: 12px; 
-  text-decoration: none; 
+  border-top: 1px solid orange;
+  padding: 12px;
+  text-decoration: none;
 }
 
 .vertical-menu a:hover {
-  background-color: rgb(16, 41, 42); 
+  background-color: rgb(16, 41, 42);
 }
 
 .vertical-menu a.active {
-  background-color: #16aadf; /* Add a green color to the "active/current" link */
+  background-color: #16aadf;
+  /* Add a green color to the "active/current" link */
   color: rgb(56, 148, 151) !important;
 }
-span{
+
+span {
   margin-right: 2%;
   margin-left: 2%;
   margin-bottom: 3%;
 }
 
 
-h3{
-  color:white;
+h3 {
+  color: white;
   text-align: center;
   font-weight: bolder;
 }
-.img{
+
+.img {
   margin-left: 30%;
 }
 
 
 
-#header{
-  color:white;
+#header {
+  color: white;
 }
-.row{
+
+.row {
   margin-left: 1%;
 }
-.btnleft{
-  float:right
+
+.btnleft {
+  float: right
 }

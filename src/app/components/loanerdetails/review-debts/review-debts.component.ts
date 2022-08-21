@@ -11,29 +11,29 @@ import { DebtService } from 'src/app/services/debt.service';
 })
 export class ReviewDebtsComponent implements OnInit {
 
-  debts :Debt[];
-  constructor(private debtService : DebtService) { }
+  debts: Debt[];
+  constructor(private debtService: DebtService) { }
   loaner: Loaners;
   ngOnInit(): void {
-   this.loaner= JSON.parse( localStorage.getItem("chosenLoaner") || '{}');
-   this.getDebts();
-  
+    this.loaner = JSON.parse(localStorage.getItem("chosenLoaner") || '{}');
+    this.getDebts();
+
   }
-  getDebts(): void{
+  getDebts(): void {
     this.debtService.getAll(this.loaner.id).snapshotChanges().pipe(
-      map(changes=>
-        changes.map(c=>({
+      map(changes =>
+        changes.map(c => ({
           key: c.payload, ...c.payload.val()
         })))
     ).subscribe(data => {
-      this.debts=data;
+      this.debts = data;
     });
   }
 
-  getDate(milies:any){
-    return milies*-1
+  getDate(milies: any) {
+    return milies * -1
   }
-  openImage(image:string){
+  openImage(image: string) {
     window.open(image);
   }
 }

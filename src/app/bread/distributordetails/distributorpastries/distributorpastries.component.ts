@@ -18,57 +18,58 @@ export class DistributorpastriesComponent implements OnInit {
   pastries: Pastry[];
   newPrice: number;
   distributor: Distributor;
-  constructor(private pastryService : PastryService,private ruter: Router,public dialog: MatDialog) { }
+  constructor(private pastryService: PastryService, private ruter: Router, public dialog: MatDialog) { }
 
   ngOnInit(): void {
-    this.distributor=JSON.parse(localStorage.getItem("chosenDistributor") || '{}');
+    this.distributor = JSON.parse(localStorage.getItem("chosenDistributor") || '{}');
     this.getLoaners();
   }
 
-    getLoaners(): void{
-      this.pastryService.getAll(this.distributor.id).snapshotChanges().pipe(
-        map(changes=>
-          changes.map(c=>({
-            key: c.payload, ...c.payload.val()
-          })))
-      ).subscribe(data => {
-        this.pastries = data;
-      });
-    }
+  getLoaners(): void {
+    this.pastryService.getAll(this.distributor.id).snapshotChanges().pipe(
+      map(changes =>
+        changes.map(c => ({
+          key: c.payload, ...c.payload.val()
+        })))
+    ).subscribe(data => {
+      this.pastries = data;
+    });
+  }
 
-    changePastry(pastry:any):void{
+  changePastry(pastry: any): void {
 
-      const dialogRef = this.dialog.open(DialogPriceChangeComponent, {
-        width: '250px',
-        data: { name: pastry.name,newPrice: this.newPrice},
-      });
-  
-      dialogRef.afterClosed().subscribe(result => {
-        console.log('The dialog was closed');
-        this.newPrice = result;
-        this.pastryService.update(this.distributor.id!,pastry.name,{ cena:  this.newPrice })
+    const dialogRef = this.dialog.open(DialogPriceChangeComponent, {
+      width: '250px',
+      data: { name: pastry.name, newPrice: this.newPrice },
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      this.newPrice = result;
+      this.pastryService.update(this.distributor.id!, pastry.name, { cena: this.newPrice })
         .then(() => {
-         pastry.cena=this.newPrice;
-         if(pastry.name=="HLEB"){
-         var breadPrice=new BreadPrice();
-         var date=new Date();
-         breadPrice.date=date.getTime();
-         breadPrice.id="";
-         breadPrice.value=this.newPrice
-         this.pastryService.addNewBreadPrice(this.distributor.id!,breadPrice)
-         }
-         alert("Uspesno dodato!"); })
+          pastry.cena = this.newPrice;
+          if (pastry.name == "HLEB") {
+            var breadPrice = new BreadPrice();
+            var date = new Date();
+            breadPrice.date = date.getTime();
+            breadPrice.id = "";
+            breadPrice.value = this.newPrice
+            this.pastryService.addNewBreadPrice(this.distributor.id!, breadPrice)
+          }
+          alert("Uspesno dodato!");
+        })
         .catch(err => console.log(err));
-        
-       
-         
-      });
-      //change pastry
-   //   localStorage.setItem("chosenLoaner",JSON.stringify(id));
-      
-//this.ruter.navigate(['dug/duznik']);
-//
-    }
+
+
+
+    });
+    //change pastry
+    //   localStorage.setItem("chosenLoaner",JSON.stringify(id));
+
+    //this.ruter.navigate(['dug/duznik']);
+    //
+  }
 
 
 }

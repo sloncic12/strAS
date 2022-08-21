@@ -1,55 +1,65 @@
 .vertical-menu {
-    width: 200px; /* Set a width if you like */
-   margin-bottom: 2%;
-   padding-bottom: 1%;
-  }
-  .container{
-    margin-top: 2%;
-  }
-  .vertical-menu a {
-    /* Grey background color */
-    color: white; /* Black text color */
-    font-size: 11pt;
-    
-  border-top:1px solid orange;
-    display: block; /* Make the links appear below each other */
-    padding: 10px; /* Add some padding */
-    text-decoration: none; /* Remove underline from links */
-  }
-  
-  .vertical-menu a:hover {
-    background-color: rgb(255, 255, 255);
-    color:   #5344a9;
-  
-    font-weight: bold;
-     /* Dark grey background on mouse-over */
-  }
-  
-  .vertical-menu a.active {
-    background-color: #4CAF50; /* Add a green color to the "active/current" link */
-    color: black;;
-  }
-  
-h3{
+  width: 200px;
+  /* Set a width if you like */
+  margin-bottom: 2%;
+  padding-bottom: 1%;
+}
+
+.container {
+  margin-top: 2%;
+}
+
+.vertical-menu a {
+  /* Grey background color */
+  color: white;
+  /* Black text color */
+  font-size: 11pt;
+
+  border-top: 1px solid orange;
+  display: block;
+  /* Make the links appear below each other */
+  padding: 10px;
+  /* Add some padding */
+  text-decoration: none;
+  /* Remove underline from links */
+}
+
+.vertical-menu a:hover {
+  background-color: rgb(255, 255, 255);
+  color: #5344a9;
+
+  font-weight: bold;
+  /* Dark grey background on mouse-over */
+}
+
+.vertical-menu a.active {
+  background-color: #4CAF50;
+  /* Add a green color to the "active/current" link */
+  color: black;
+  ;
+}
+
+h3 {
   text-align: center;
-  margin:6% !important;
+  margin: 6% !important;
   color: white;
 }
-.img{
+
+.img {
   margin-left: 30%;
 }
 
-.cedulja{
+.cedulja {
   font-weight: bold;
   border-radius: 15%;
   padding: 6%;
 }
 
-.ceduljaimage{
-  margin-bottom:10% !important;
+.ceduljaimage {
+  margin-bottom: 10% !important;
 }
 
-.btn{
+.btn {
   float: right;
 
-  }
+}

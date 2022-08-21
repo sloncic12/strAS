@@ -10,29 +10,29 @@ import { FlourdebtService } from 'src/app/services/flourdebt.service';
   styleUrls: ['./distributordebts.component.css']
 })
 export class DistributordebtsComponent implements OnInit {
-  distributor:Distributor;
-  debts:FlourDebt[];
+  distributor: Distributor;
+  debts: FlourDebt[];
   constructor(private flourDebtService: FlourdebtService) { }
 
   ngOnInit(): void {
 
-    this.distributor= JSON.parse( localStorage.getItem("chosenDistributor") || '{}');
+    this.distributor = JSON.parse(localStorage.getItem("chosenDistributor") || '{}');
     this.getDebts();
   }
 
 
-  getDebts(): void{
-  this.flourDebtService.getAll(this.distributor.id).snapshotChanges().pipe(
-    map(changes=>
-      changes.map(c=>({
-        key: c.payload, ...c.payload.val()
-      })))
-  ).subscribe(data => {
-    this.debts=data;
-  });
-}
+  getDebts(): void {
+    this.flourDebtService.getAll(this.distributor.id).snapshotChanges().pipe(
+      map(changes =>
+        changes.map(c => ({
+          key: c.payload, ...c.payload.val()
+        })))
+    ).subscribe(data => {
+      this.debts = data;
+    });
+  }
 
-getDate(milies:any){
-  return milies*-1
-}
+  getDate(milies: any) {
+    return milies * -1
+  }
 }

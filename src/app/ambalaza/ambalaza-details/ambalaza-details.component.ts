@@ -15,47 +15,48 @@ import { AmbalazaDetailService } from '../../services/ambalaza-detail.service';
 })
 export class AmbalazaDetailsComponent implements OnInit {
 
-  constructor(private ruter:Router,public dialog:MatDialog,private ambalazaService:AmbalazaDetailService,private bottleLoanerService:AmbalazaserviceService) { }
+  constructor(private ruter: Router, public dialog: MatDialog, private ambalazaService: AmbalazaDetailService, private bottleLoanerService: AmbalazaserviceService) { }
 
   loaner: AmbalazaLoaner;
-  selected:number;
+  selected: number;
   ngOnInit(): void {
-    this.loaner= JSON.parse( localStorage.getItem("chosenBottleLoaner") || '{}');
-  this.selected=0;
-  
-  }
- 
-  setSelected(n:any){
-    this.selected=n;
-    localStorage.setItem("selected",n);
-  }
-  
-deleteUser(){
-  //otvori dijalog za potvrdu
-    if(this.loaner.zaduzen=='ne'){
-  const dialogRef = this.dialog.open(DialogDeleteUserComponent, {
-    width: '250px',
-    data: { toReturn: ""},
-  });
+    this.loaner = JSON.parse(localStorage.getItem("chosenBottleLoaner") || '{}');
+    this.selected = 0;
 
-  dialogRef.afterClosed().subscribe(result => {
-    console.log('The dialog was closed');
-    if (result=="ok"){
-  
-      this.ambalazaService.deleteAllBottleDates(this.loaner.id!).then(() => {
-      this.bottleLoanerService.delete(this.loaner.id!)
-      localStorage.removeItem("chosenLoaner")
-      this.ruter.navigate(['ambalaza']);
+  }
 
-    alert("Uspesno izbrisano")
+  setSelected(n: any) {
+    this.selected = n;
+    localStorage.setItem("selected", n);
+  }
+
+  deleteUser() {
+    //otvori dijalog za potvrdu
+    if (this.loaner.zaduzen == 'ne') {
+      const dialogRef = this.dialog.open(DialogDeleteUserComponent, {
+        width: '250px',
+        data: { toReturn: "" },
       });
-  }});
+
+      dialogRef.afterClosed().subscribe(result => {
+        console.log('The dialog was closed');
+        if (result == "ok") {
+
+          this.ambalazaService.deleteAllBottleDates(this.loaner.id!).then(() => {
+            this.bottleLoanerService.delete(this.loaner.id!)
+            localStorage.removeItem("chosenLoaner")
+            this.ruter.navigate(['ambalaza']);
+
+            alert("Uspesno izbrisano")
+          });
+        }
+      });
 
 
 
-}else{
-  alert("Nije moguce izbrisati korisnika sa postojecim dugom!")
-}
-}
+    } else {
+      alert("Nije moguce izbrisati korisnika sa postojecim dugom!")
+    }
+  }
 
 }

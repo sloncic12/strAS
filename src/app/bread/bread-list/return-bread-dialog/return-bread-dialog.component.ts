@@ -11,7 +11,7 @@ export class ReturnBreadDialogComponent implements OnInit {
   constructor(
     public dialogRef: MatDialogRef<ReturnBreadDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any,
-  ) {}
+  ) { }
 
 
   onNoClick(): void {

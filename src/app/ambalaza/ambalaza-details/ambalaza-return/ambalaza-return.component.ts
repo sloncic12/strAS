@@ -11,9 +11,9 @@ export class AmbalazaReturnComponent implements OnInit {
   constructor(
     public dialogRef: MatDialogRef<AmbalazaReturnComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any,
-  ) {}
+  ) { }
 
-  date1:Date;
+  date1: Date;
   onNoClick(): void {
     this.dialogRef.close();
   }
@@ -21,9 +21,9 @@ export class AmbalazaReturnComponent implements OnInit {
 
   }
 
-  
-  dateChangedOne($event:any){
-    this.data.date= $event.target.value;
-   }
+
+  dateChangedOne($event: any) {
+    this.data.date = $event.target.value;
+  }
 
 }

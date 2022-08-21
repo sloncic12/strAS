@@ -1,72 +1,72 @@
-
 <div class="box">
-   
-  <form #myForm="ngForm" (ngSubmit)="submitCompany(myForm.form);"> 
-    
+
+  <form #myForm="ngForm" (ngSubmit)="submitCompany(myForm.form);">
+
     <p>Datum od
-      <mat-form-field class="w-100" appearance="outline" >
-        <input matInput  [matDatepicker]="picker" (dateChange)="dateChangedOne($event)" >
+      <mat-form-field class="w-100" appearance="outline">
+        <input matInput [matDatepicker]="picker" (dateChange)="dateChangedOne($event)">
         <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
         <mat-datepicker #picker></mat-datepicker>
       </mat-form-field>
-    </p>  
-  
-  
-    <p  >Datum do
-      <mat-form-field class="w-100" appearance="outline" >
-        <input matInput  [matDatepicker]="picker2" (dateChange)="dateChangedTwo($event)" >
+    </p>
+
+
+    <p>Datum do
+      <mat-form-field class="w-100" appearance="outline">
+        <input matInput [matDatepicker]="picker2" (dateChange)="dateChangedTwo($event)">
         <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
         <mat-datepicker #picker2></mat-datepicker>
       </mat-form-field>
-    </p>  
-   <button class="btn btn-primary " [disabled]="!myForm.valid">Pregledaj</button> 
-</form> 
-  </div>
+    </p>
+    <button class="btn btn-primary " [disabled]="!myForm.valid">Pregledaj</button>
+  </form>
+</div>
 
-  <p *ngIf='breadSums.length>0'>Ukupno  <button  (click)="savePDF()" class="btn btn-success" *ngIf='bread.length>0'>Skini PDF</button> 
-  </p>
-  
- <table  class="table  table-bordered table-sm " id="content1" *ngIf='breadSums.length>0' >
-    <thead class="thead-light">
+<p *ngIf='breadSums.length>0'>Ukupno <button (click)="savePDF()" class="btn btn-success" *ngIf='bread.length>0'>Skini
+    PDF</button>
+</p>
 
-<th scope="col">Tip</th>
-<th scope="col">Kolicina</th>
-     </thead>
-     <tbody>
-   <tr  *ngFor='let student of breadSums; index as i' >
-        <td>        
-         {{student.type}}
-        </td>
-        <td>   
-         {{student.kolicina}}
-        </td>
-     
-      </tr>
-</tbody>
- </table>
+<table class="table  table-bordered table-sm " id="content1" *ngIf='breadSums.length>0'>
+  <thead class="thead-light">
 
-  
-  <table  id="content2"  class="table  table-sm " *ngIf='bread.length>0' >
-    <thead class="thead-light" *ngIf='bread.length>0'>
-
-<th scope="col">Datum</th>
-<th scope="col">Tip</th>
-<th scope="col">Kolicina</th>
-     </thead>
-     <tbody>
-   <tr  *ngFor='let student of bread; index as i' >
-  
-     <td>
-         {{getDate(student.datum) | date:'dd/MM/yyyy'}}
+    <th scope="col">Tip</th>
+    <th scope="col">Kolicina</th>
+  </thead>
+  <tbody>
+    <tr *ngFor='let student of breadSums; index as i'>
+      <td>
+        {{student.type}}
       </td>
-   
-        <td>        
-         {{student.type}}
-        </td>
-        <td>   
-         {{student.kolicina}}
-        </td>
+      <td>
+        {{student.kolicina}}
+      </td>
 
-      </tr>
-</tbody>
- </table>
+    </tr>
+  </tbody>
+</table>
+
+
+<table id="content2" class="table  table-sm " *ngIf='bread.length>0'>
+  <thead class="thead-light" *ngIf='bread.length>0'>
+
+    <th scope="col">Datum</th>
+    <th scope="col">Tip</th>
+    <th scope="col">Kolicina</th>
+  </thead>
+  <tbody>
+    <tr *ngFor='let student of bread; index as i'>
+
+      <td>
+        {{getDate(student.datum) | date:'dd/MM/yyyy'}}
+      </td>
+
+      <td>
+        {{student.type}}
+      </td>
+      <td>
+        {{student.kolicina}}
+      </td>
+
+    </tr>
+  </tbody>
+</table>

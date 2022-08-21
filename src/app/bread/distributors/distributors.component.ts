@@ -13,47 +13,47 @@ import { DistributorsService } from 'src/app/services/distributors.service';
 })
 export class DistributorsComponent implements OnInit {
   loaners: Distributor[];
-  constructor(private distributorService: DistributorsService,private ruter:Router,private dialog:MatDialog) { }
+  constructor(private distributorService: DistributorsService, private ruter: Router, private dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.getLoaners();
   }
-  getLoaners(): void{
+  getLoaners(): void {
     this.distributorService.getAll().snapshotChanges().pipe(
-      map(changes=>
-        changes.map(c=>({
+      map(changes =>
+        changes.map(c => ({
           key: c.payload, ...c.payload.val()
         })))
     ).subscribe(data => {
       this.loaners = data;
     });
   }
-  goToDetails(id:any):void{
-    localStorage.setItem("chosenDistributor",JSON.stringify(id));
-    
+  goToDetails(id: any): void {
+    localStorage.setItem("chosenDistributor", JSON.stringify(id));
+
     this.ruter.navigate(['distributeri/pregled']);
 
   }
-  
-newLoaner(){
 
-  const dialogRef = this.dialog.open(NewUserDialogComponent, {
-    width: '250px',
-    data: { toReturn: ""},
-  });
+  newLoaner() {
 
-  dialogRef.afterClosed().subscribe(result => {
-    console.log('The dialog was closed');
-    if (result==""){
-      alert("Greska!");
-      return;
-    }
-    var l=new Distributor();
-    l.name=result;
-    l.cedulja=0;
-    l.cena=0;
-    l.id="";
-    this.distributorService.add(l);
-  });
-}
+    const dialogRef = this.dialog.open(NewUserDialogComponent, {
+      width: '250px',
+      data: { toReturn: "" },
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      if (result == "") {
+        alert("Greska!");
+        return;
+      }
+      var l = new Distributor();
+      l.name = result;
+      l.cedulja = 0;
+      l.cena = 0;
+      l.id = "";
+      this.distributorService.add(l);
+    });
+  }
 }

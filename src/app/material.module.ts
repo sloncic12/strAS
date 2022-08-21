@@ -1,8 +1,8 @@
 // material.module.ts
 import { NgModule } from '@angular/core';
-import { MatDatepickerModule} from '@angular/material/datepicker';
-import {    MatNativeDateModule} from '@angular/material/core';
-    
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
@@ -16,7 +16,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MatNativeDateModule,
     BrowserAnimationsModule
   ],
-  providers: [ MatDatepickerModule ],
+  providers: [MatDatepickerModule],
 })
 
-export class MaterialModule {}
+export class MaterialModule { }

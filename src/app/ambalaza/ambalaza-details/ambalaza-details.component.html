@@ -1,28 +1,29 @@
 <br>
 
 <div class="container-fluid">
-   <button (click)="deleteUser()"    class=" btn btnleft btn-danger" aria-hidden='true'><i class="fa fa-trash" ></i> Izbrisi korisnika</button>
-  
-   <div class="row w-95"> 
+   <button (click)="deleteUser()" class=" btn btnleft btn-danger" aria-hidden='true'><i class="fa fa-trash"></i> Izbrisi
+      korisnika</button>
+
+   <div class="row w-95">
       <div class="vertical-menu col-md-3  rozepozadina">
-        <br>
-        
-       <img class=" img "  align="center" src="../../../assets/patient.png" alt="Card image" style="width:45%">
-   
-      <br>
-      <br>
-     <h3>{{loaner.name}}</h3>
-     <br> <br>
+         <br>
 
-     <a routerLinkActive="active" (click)="setSelected(0)">Pregled istorije duga</a>
-     <a  (click)="setSelected(1)"> Novo zaduzenje</a>
-    </div>
-   <div class="component col-md-8 " >
-     <app-ambalaza-review  *ngIf='selected==0' ></app-ambalaza-review>
-     <app-ambalaza-new  *ngIf='selected==1' ></app-ambalaza-new>
-  </div>
-   
-     </div>
+         <img class=" img " align="center" src="../../../assets/patient.png" alt="Card image" style="width:45%">
 
-    
+         <br>
+         <br>
+         <h3>{{loaner.name}}</h3>
+         <br> <br>
+
+         <a routerLinkActive="active" (click)="setSelected(0)">Pregled istorije duga</a>
+         <a (click)="setSelected(1)"> Novo zaduzenje</a>
+      </div>
+      <div class="component col-md-8 ">
+         <app-ambalaza-review *ngIf='selected==0'></app-ambalaza-review>
+         <app-ambalaza-new *ngIf='selected==1'></app-ambalaza-new>
+      </div>
+
+   </div>
+
+
 </div>

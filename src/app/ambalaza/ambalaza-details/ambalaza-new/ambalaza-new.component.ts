@@ -13,57 +13,57 @@ import { AmbalazaserviceService } from 'src/app/services/ambalazaservice.service
 export class AmbalazaNewComponent implements OnInit {
 
   loaner: AmbalazaLoaner;
-  constructor(private mainService:AmbalazaDetailService,private fb: FormBuilder,private loanerService:AmbalazaserviceService) { }
-  beers:Array<string> = ["Lav",
-  'Jelen 0,33l',
- 'Jelen 0,5l',
-   "Zajecarsko 0,5l",
-  "Zajecarsko 0,33l",
- "Tuborg",
-  "Heineken",
-   "Apatinsko",
-  "Merak",
-  "Nektar 0,5l",
+  constructor(private mainService: AmbalazaDetailService, private fb: FormBuilder, private loanerService: AmbalazaserviceService) { }
+  beers: Array<string> = ["Lav",
+    'Jelen 0,33l',
+    'Jelen 0,5l',
+    "Zajecarsko 0,5l",
+    "Zajecarsko 0,33l",
+    "Tuborg",
+    "Heineken",
+    "Apatinsko",
+    "Merak",
+    "Nektar 0,5l",
 
-  "Banjalucko",
-  "Kisela voda 0,25l",
-   "Niksicko",
-   "Kisela voda 1l",
-   "Carlsberg",
-   "Staropramen"];
-   selectedBeerType:string;
-   
-  myForm:Form;
-  date:Date;
+    "Banjalucko",
+    "Kisela voda 0,25l",
+    "Niksicko",
+    "Kisela voda 1l",
+    "Carlsberg",
+    "Staropramen"];
+  selectedBeerType: string;
+
+  myForm: Form;
+  date: Date;
 
   ngOnInit(): void {
-    
-    this.loaner= JSON.parse( localStorage.getItem("chosenBottleLoaner") || '{}');
+
+    this.loaner = JSON.parse(localStorage.getItem("chosenBottleLoaner") || '{}');
   }
 
 
-  
-  dateChanged($event:any){
-    this.date= $event.target.value;
-   }
+
+  dateChanged($event: any) {
+    this.date = $event.target.value;
+  }
 
 
-   submitCompany(form:any){
-    
+  submitCompany(form: any) {
+
     this.date.setSeconds(0);
     this.date.setMinutes(0);
     this.date.setHours(0);
 
-    var ambalaza=new Ambalaza();
-    ambalaza.id="";
-    ambalaza.gajba=form.value.gajbe;
-    ambalaza.flase=form.value.flase;
-    ambalaza.date=this.date.getTime()*(-1);
-    ambalaza.tip=this.selectedBeerType!;
-    ambalaza.returned="ne";
-    var b=this.mainService.addNewAmbalaza(this.loaner.id!,ambalaza);
-    if (b){
-      this.loanerService.update(this.loaner.id!,{zaduzen:"da"})
+    var ambalaza = new Ambalaza();
+    ambalaza.id = "";
+    ambalaza.gajba = form.value.gajbe;
+    ambalaza.flase = form.value.flase;
+    ambalaza.date = this.date.getTime() * (-1);
+    ambalaza.tip = this.selectedBeerType!;
+    ambalaza.returned = "ne";
+    var b = this.mainService.addNewAmbalaza(this.loaner.id!, ambalaza);
+    if (b) {
+      this.loanerService.update(this.loaner.id!, { zaduzen: "da" })
     }
     alert("Uspesno dodato!");
     window.location.reload();

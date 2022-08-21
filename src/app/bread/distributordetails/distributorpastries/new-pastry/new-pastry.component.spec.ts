@@ -8,9 +8,9 @@ describe('NewPastryComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ NewPastryComponent ]
+      declarations: [NewPastryComponent]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

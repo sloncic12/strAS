@@ -1,39 +1,40 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 
-<div class="container-fluid "  >
-  
-<br>
-<div class="row justify-content-end">
-  <div class="col-sm-3">
-    <button  (click)="newLoaner()"    class=" btn btnright btn-warning" aria-hidden='true'><i class="fa fa-plus" ></i>  Novi distributer</button>
-   
-</div>
-</div>
+<div class="container-fluid ">
 
-<div class="cards w-100" *ngIf='loaners.length!=0'> 
-  <div class="row justify-content-center">
-<div class="card  col-sm-12 col-xs-12 col-md-6 col-lg-3"  *ngFor='let student of loaners; index as i' id="card3">
+  <br>
+  <div class="row justify-content-end">
+    <div class="col-sm-3">
+      <button (click)="newLoaner()" class=" btn btnright btn-warning" aria-hidden='true'><i class="fa fa-plus"></i> Novi
+        distributer</button>
 
-  
-<img class=" card-img-top "  align="center" src="../../../assets/baker.png" alt="Card image" style="width:40%">
-<div class="card-body">
-  <h4 class="card-title"  align="center">{{student.name}}</h4>
-  <div >
-    
-    Cedulja: {{student.cedulja | number :'.0-1'}}
-     <br>
-    Iznos:  {{student.cena | number : '.0-1'}} 
-   </div>
-  
-<a  class="btn btn-primary" (click)="goToDetails(student)" id="button">Pogledaj</a>
+    </div>
+  </div>
 
-</div>
-</div>
-
-</div>
+  <div class="cards w-100" *ngIf='loaners.length!=0'>
+    <div class="row justify-content-center">
+      <div class="card  col-sm-12 col-xs-12 col-md-6 col-lg-3" *ngFor='let student of loaners; index as i' id="card3">
 
 
+        <img class=" card-img-top " align="center" src="../../../assets/baker.png" alt="Card image" style="width:40%">
+        <div class="card-body">
+          <h4 class="card-title" align="center">{{student.name}}</h4>
+          <div>
+
+            Cedulja: {{student.cedulja | number :'.0-1'}}
+            <br>
+            Iznos: {{student.cena | number : '.0-1'}}
+          </div>
+
+          <a class="btn btn-primary" (click)="goToDetails(student)" id="button">Pogledaj</a>
+
+        </div>
+      </div>
+
+    </div>
 
 
-</div>
+
+
+  </div>

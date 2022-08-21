@@ -12,7 +12,7 @@ export class DialogDeleteUserComponent implements OnInit {
   constructor(
     public dialogRef: MatDialogRef<DialogDeleteUserComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any,
-  ) {}
+  ) { }
 
 
   onNoClick(): void {
