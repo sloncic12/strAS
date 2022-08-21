@@ -12,8 +12,8 @@
          <tbody>
        <tr  *ngFor='let student of debts' >
           <td>
-       <span *ngIf="student.opis=='vracen'" [ngStyle]="{'color': 'green'}"> +{{student.value}}</span> 
-       <span *ngIf='student.opis!="vracen"' [ngStyle]="{'color': 'red'}">  -{{student.value}}</span> 
+       <span *ngIf="student.opis=='vracen'" [ngStyle]="{'color': 'lightgreen'}"> +{{student.value}}</span> 
+       <span *ngIf='student.opis!="vracen"' [ngStyle]="{'color': 'rgb(235, 82, 82)'}">  -{{student.value}}</span> 
           </td>
           <td>
          

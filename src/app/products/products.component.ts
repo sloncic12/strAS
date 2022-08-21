@@ -40,4 +40,8 @@ export class ProductsComponent implements OnInit {
       doc.save('table.pdf')
   
     }
+
+    deleteProduct(product:Product){
+
+    }
 }

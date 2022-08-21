@@ -62,10 +62,10 @@
       <td> 
         {{getDate(student.date) | date:'dd/MM/yyyy'}}
       </td>
-      <td *ngIf='student.returned=="da"' [ngStyle]="{'color': 'green'}">
+      <td *ngIf='student.returned=="da"' [ngStyle]="{'color': 'lightgreen'}">
         Vraceno
        </td>
-       <td *ngIf='student.returned!="da"' [ngStyle]="{'color': 'red'}">
+       <td *ngIf='student.returned!="da"' [ngStyle]="{'color': 'rgb(235, 82, 82)'}">
         Uzeto
        </td>
      

@@ -4,8 +4,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Exo:wght@500&display=swap');
 html, body {
   font-family: 'Exo', sans-serif !important;
+  font-weight: bolder;
 }
-
+td,th{
+  font-weight: bolder;
+  color: white !important;
+  font-size: 16pt;
+}
+table{
+  
+  background-color: #242329 !important;
+  color: white !important;
+}
 .rozetekst{
     color: #bb5098;
   }

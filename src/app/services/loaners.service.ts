@@ -72,4 +72,19 @@ add(loaner: Loaners): any {
   }
 }
 
+delete(userId:string): Promise<void> {
+  var store=localStorage.getItem("chosenStore");
+  
+  if (store=="Pricinovic"){
+    var newRef=this.db.database.ref().child("mp_loaners").child(userId);
+    return newRef.remove();
+  }else{
+    var newRef=this.db.database.ref().child("glu_loaners").child(userId);
+    return newRef.remove();
+  
+}
+  
+
+}
+
 }

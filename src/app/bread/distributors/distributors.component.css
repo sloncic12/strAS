@@ -20,7 +20,9 @@
     margin-bottom:2%;
     padding: 2%;
     opacity:0.9;
-    
+    color: white;
+    font-weight: 700;
+    background-color: black !important;
     }
     .card-img-top{
         margin-left: 30%;

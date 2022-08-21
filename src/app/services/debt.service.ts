@@ -41,5 +41,19 @@ export class DebtService {
     }
   }
 
+  deleteAllDebts(userId:string): Promise<void> {
+  var store=localStorage.getItem("chosenStore");
+  
+  if (store=="Pricinovic"){
+    var newRef=this.db.database.ref().child("mp_debt").child(userId);
+    return newRef.remove();
+  }else{
+    var newRef=this.db.database.ref().child("glu_debt").child(userId);
+    return newRef.remove();
+  
+}
+  
+
+}
   
 }

@@ -49,6 +49,7 @@ init("user_YG2iPBF6kuSMPaBnriHhu");
 import { HttpClientModule } from '@angular/common/http';
 import { AmbalazaByBeerComponent } from './ambalaza/ambalazadaily/ambalaza-by-beer/ambalaza-by-beer.component';
 import { ProductsComponent } from './products/products.component';
+import { DialogDeleteUserComponent } from './components/loanerdetails/dialog-delete-user/dialog-delete-user.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -81,7 +82,8 @@ import { ProductsComponent } from './products/products.component';
     NewPastryComponent,
     NewUserDialogComponent,
     AmbalazaByBeerComponent,
-    ProductsComponent
+    ProductsComponent,
+    DialogDeleteUserComponent
 
   ],
   imports: [

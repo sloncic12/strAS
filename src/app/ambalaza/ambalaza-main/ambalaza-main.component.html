@@ -52,8 +52,8 @@
       <tr  *ngFor='let student of loaners ; index as i'>
         <th scope="row">{{ i + 1 }}</th>
          <td>
-          <span *ngIf="student.zaduzen!=='da'" [ngStyle]="{'color': 'green'}"> {{student.name}}</span> 
-          <span *ngIf="student.zaduzen!=='ne'" [ngStyle]="{'color': 'black'}"> {{student.name}}</span> 
+          <span *ngIf="student.zaduzen!=='da'" [ngStyle]="{'color': 'lightgreen'}"> {{student.name}}</span> 
+          <span *ngIf="student.zaduzen!=='ne'" [ngStyle]="{'color': 'white'}"> {{student.name}}</span> 
      
          </td>
          

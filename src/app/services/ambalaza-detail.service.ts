@@ -259,6 +259,20 @@ addToDates(ambalaza:Ambalaza,userId:string){
       return newRef.remove();
     }
   }
+   
+  
+  deleteAllBottleDates(userId:string): Promise<void> {
+    var store=localStorage.getItem("chosenStore");
+    
+    if (store=="Pricinovic"){
+      var newRef=this.db.database.ref().child("mp_bottle_date").child(userId);
+      return newRef.remove();
+    }else{
+      var newRef=this.db.database.ref().child("glu_bottle_date").child(userId);
+      return newRef.remove();
+    
+  }
+}
     
 
 }
