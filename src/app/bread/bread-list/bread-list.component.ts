@@ -39,7 +39,7 @@ export class BreadListComponent implements OnInit {
         })))
     ).subscribe(data => {
       this.bread = data;
-    });
+    }); 
   }
 
   getDate(milies: any) {

@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { MessagingService } from './services/messaging.service';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class AppComponent {
 
-  constructor(private ruter: Router, private http: HttpClient) {
+  constructor(private ruter: Router, private http: HttpClient, private messagingService:MessagingService) {
 
   }
   login: boolean = false;

@@ -6,6 +6,7 @@ import { ProductService } from '../services/product.service';
 import autoTable from 'jspdf-autotable'
 import { NewProductComponent } from './new-product/new-product.component';
 import { MatDialog } from '@angular/material/dialog';
+import { MessagingService } from '../services/messaging.service';
 @Component({
   selector: 'app-products',
   templateUrl: './products.component.html',
@@ -13,7 +14,7 @@ import { MatDialog } from '@angular/material/dialog';
 })
 export class ProductsComponent implements OnInit {
 
-  constructor(private productService: ProductService, private dialog: MatDialog) { }
+  constructor(private productService: ProductService, private dialog: MatDialog, private messagingService:MessagingService) { }
   @ViewChild('content') content: ElementRef;
   ngOnInit(): void {
     this.getLoaners();
@@ -71,6 +72,18 @@ export class ProductsComponent implements OnInit {
       // alert(JSON.stringify(newProduct))
 
       this.productService.add(newProduct)
+      var message = {
+        "notification": {
+          "title":"Nedostaje "+ newProduct.name,
+          "body": localStorage.getItem("chosenStore"),
+          "data":{
+            "category": newProduct.category,
+            "store": localStorage.getItem("chosenStore")
+          }
+        },
+        "to": 'fTR-AmzJSGe_CFG-DabJTZ:APA91bFHq8dO7ulmla1VaxPch7VZRftT_BGx1-6I4Okb5zzVAxf4Pceh_BUTIpdAOKzP8k3SJWQc1fbg5sh3kA1CzX8O-j78mEgy0JYez6EzTXco3jy7iX2ZwCemo32uyCks4txw7sKX'
+      }
+      this.messagingService.sendNotif(message)
       alert("Uspesno dodat proizvod")
     })
 
